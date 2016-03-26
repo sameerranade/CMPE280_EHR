@@ -2,23 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
     <!-- add the jQuery script -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- add the jQWidgets framework -->
-    <script type="text/javascript" src="/public/javascripts/jqxcore.js"></script>
+    <script type="text/javascript" src="/javascripts/jqxcore.js"></script>
     <!-- add one or more widgets -->
-    <script type="text/javascript" src="/public/javascripts/jqxbuttons.js"></script>
+    <script type="text/javascript" src="/javascripts/jqxbuttons.js"></script>
     <!-- add the jQWidgets base styles and one of the theme stylesheets -->
-    <link rel="stylesheet" href="/public/stylesheets/jqx.base.css" type="text/css" />
-    <link rel="stylesheet" href="/public/stylesheets/jqx.darkblue.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/jqx.darkblue.css" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 </head>
 <body>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#myButton").jqxButton({ width: '120px', height: '35px', theme: 'darkblue'});
-    });
-</script>
-<input type="button" value="Click Me" id='myButton'/>
+  <div class="container">
+  <div class="row">
+    <div class="main">
+      <h3 style="color:#ADD8E6">Please Log In, or <a href="#">Sign Up</a></h3>
+      <div class="login-or">
+        <hr class="hr-or" >
+      </div>
+
+      <form role="form">
+        <div class="form-group">
+          <label for="inputUsernameEmail">Username or email</label>
+          <input type="text" class="form-control" id="inputUsernameEmail">
+        </div>
+        <div class="form-group">
+          <a class="pull-right" href="#">Forgot password?</a>
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" id="inputPassword">
+        </div>
+        <button type="submit" class="btn btn btn-primary">
+          Log In
+        </button>
+      </form>
+    </div>
+
 </body>
 </html>
