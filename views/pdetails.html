@@ -1,10 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Patient Details</title>
-</head>
-<body>
+    <title id='Description'>In this example is demonstrated how to use the jqxListBox with Search field. ListBox is automatically updated when a character is entered into the search field.</title>
+    <link rel="stylesheet" href="../public/stylesheets/jqx.base.css" type="text/css" />
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="../public/javascripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../public/javascripts/jqxcore.js"></script>
+    <script type="text/javascript" src="../public/javascripts/jqxdata.js"></script>
+    <script type="text/javascript" src="../public/javascripts/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../public/javascripts/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="../public/javascripts/jqxlistbox.js"></script>
+    <script type="text/javascript" src="../public/javascripts/demos.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // prepare the data
+            var source =
+            {
+                datatype: "jsonp",
+                datafields: [
+                    { name: 'countryName' },
+                    { name: 'name' },
+                    { name: 'population', type: 'float' },
+                    { name: 'continentCode' },
+                    { name: 'adminName1' }
+                ],
+                url: "http://api.geonames.org/searchJSON",
+                data: {
+                    featureClass: "P",
+                    style: "full",
+                    maxRows: 90,
+                    username: "jqwidgets"
+                }
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source,
+                    {
+                        formatData: function (data) {
+                            data.name_startsWith = $("#searchField").val();
+                            return data;
+                        }
+                    }
+            );
+            $("#jqxlistbox").jqxListBox(
+                    {
+                        width: 320,
+                        height: 550,
+                        source: dataAdapter,
+                        selectedIndex: 0,
+                        displayMember: "name",
+                        valueMember: "countryName",
+                        renderer: function (index, label, value) {
+                            var item = dataAdapter.records[index];
+                            if (item != null) {
+                                var label = item.name + "(" + item.countryName + ", " + item.adminName1 + ")";
+                                return label;
+                            }
+                            return "";
+                        }
+                    });
+            var me = this;
+            $("#searchField").on('keyup', function (event) {
+                if (me.timer) clearTimeout(me.timer);
+                me.timer = setTimeout(function () {
+                    dataAdapter.dataBind();
+                }, 300);
+            });
+        });
+    </script>
+</head>
+<body class='default'>
+<div id='jqxWidget' style="font-size: 13px; font-family: Verdana; float: left;">
+    <div>
+        <span style='float: left; margin-top: 5px; margin-right: 4px;'>Search for a Patient: </span>
+        <input class='jqx-input' placeholder="Type a Patient's name here" id='searchField' type="text" style="height: 23px; float: left; width: 197px;" />
+    </div>
+    <div style="clear: both;"></div>
+    <div style="margin-top: 10px;" id="jqxlistbox"></div>
+</div>
 </body>
 </html>
