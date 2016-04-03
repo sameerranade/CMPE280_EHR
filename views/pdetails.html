@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <title>Patient Details</title>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../public/stylesheets/jqx.base.css" type="text/css"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <title id='Description'>In this example is demonstrated how to use the jqxListBox with Search field. ListBox is automatically updated when a character is entered into the search field.</title>
-    <link rel="stylesheet" href="../public/stylesheets/jqx.base.css" type="text/css" />
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="../public/javascripts/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="../public/javascripts/jqxcore.js"></script>
@@ -38,11 +38,11 @@
             {
                 datatype: "jsonp",
                 datafields: [
-                    { name: 'countryName' },
-                    { name: 'name' },
-                    { name: 'population', type: 'float' },
-                    { name: 'continentCode' },
-                    { name: 'adminName1' }
+                    {name: 'countryName'},
+                    {name: 'name'},
+                    {name: 'population', type: 'float'},
+                    {name: 'continentCode'},
+                    {name: 'adminName1'}
                 ],
                 url: "http://api.geonames.org/searchJSON",
                 data: {
@@ -87,32 +87,123 @@
         });
     </script>
 
-<!--`uer_id` int(11) DEFAULT NULL,-->
-<!--`hight` double(7,2) DEFAULT NULL,-->
-<!--`weight` double(7,2) DEFAULT NULL,-->
-<!--`address` varchar(1024) DEFAULT NULL,-->
-<!--`phone` varchar(45) DEFAULT NULL,-->
-<!--`emergency_contact` varchar(45) DEFAULT NULL,-->
-<!--`relationship` varchar(40) DEFAULT NULL,-->
-<!--`blood_type` varchar(30) DEFAULT NULL,-->
-<!--`gender` varchar(20) DEFAULT NULL,-->
-<!--`ethinicity` varchar(30) DEFAULT NULL,-->
-<!--`languagetype` varchar(50) DEFAULT NULL,-->
-<!--`Birthday` varchar(100) DEFAULT NULL,-->
-<!--`profileIds` int(11) NOT NULL AUTO_INCREMENT,-->
-<!--`ImageLocation` varchar(1024) DEFAULT NULL,-->
+    <!--`uer_id` int(11) DEFAULT NULL,-->
+    <!--`hight` double(7,2) DEFAULT NULL,-->
+    <!--`weight` double(7,2) DEFAULT NULL,-->
+    <!--`address` varchar(1024) DEFAULT NULL,-->
+    <!--`phone` varchar(45) DEFAULT NULL,-->
+    <!--`emergency_contact` varchar(45) DEFAULT NULL,-->
+    <!--`relationship` varchar(40) DEFAULT NULL,-->
+    <!--`blood_type` varchar(30) DEFAULT NULL,-->
+    <!--`gender` varchar(20) DEFAULT NULL,-->
+    <!--`ethinicity` varchar(30) DEFAULT NULL,-->
+    <!--`languagetype` varchar(50) DEFAULT NULL,-->
+    <!--`Birthday` varchar(100) DEFAULT NULL,-->
+    <!--`profileIds` int(11) NOT NULL AUTO_INCREMENT,-->
+    <!--`ImageLocation` varchar(1024) DEFAULT NULL,-->
 
-<header>
-</header>
 </head>
 <body class='default'>
 <div id='jqxWidget' style="font-size: 13px; font-family: Verdana; float: left;">
     <div>
         <span style='float: left; margin-top: 5px; margin-right: 4px;'>Search for a Patient: </span>
-        <input class='jqx-input' placeholder="Type a Patient's name here" id='searchField' type="text" style="height: 23px; float: left; width: 197px;" />
+        <input class='jqx-input' placeholder="Type a Patient's name here" id='searchField' type="text"
+               style="height: 23px; float: left; width: 197px;"/>
     </div>
     <div style="clear: both;"></div>
     <div style="margin-top: 10px;" id="jqxlistbox"></div>
 </div>
+<br>
+<br>
+<br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+        <label id="lblid" class="col-sm-4 control-label">Fetch User ID from DB</label>
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+
+        <label id="lblheight" class="col-sm-4 control-label">Fetch HEIGHT from DB</label>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+        <label id="lblweight" class="col-sm-4 control-label">Fetch WEIGHT from DB</label>
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+
+        <label id="lbladdress" class="col-sm-4 control-label">Fetch ADDRESS from DB</label>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+
+        <label id="lblphone" class="col-sm-4 control-label">Fetch PHONE from DB</label>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+
+        <label id="lblemercon" class="col-sm-4 control-label">Fetch EMERGENCY CONTACT from DB</label>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+
+        <label id="lblrelationship" class="col-sm-4 control-label">Fetch RELATIONSHIP from DB</label>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+
+        <label id="lblbldtyp" class="col-sm-4 control-label">Fetch BLOOD TYPE from DB</label>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+
+        <label id="lblgender" class="col-sm-4 control-label">Fetch GENDER from DB</label>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+
+        <label id="lblethnicity" class="col-sm-4 control-label">Fetch ETHNICITY from DB</label>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+
+        <label id="lbllanguage" class="col-sm-4 control-label">Fetch LANGUAGE from DB</label>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">User ID</label>
+
+        <label id="lblbday" class="col-sm-4 control-label">Fetch BIRTHDAY from DB</label>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-2 control-label right">sdfsdfds</label>
+
+        <label id="lblimage" class="col-sm-4 control-label">Fetch IMAGE from DB</label>
+
+    </div>
+<footer>
+
+</footer>
 </body>
 </html>
