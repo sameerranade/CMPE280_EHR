@@ -1,8 +1,10 @@
 body {
     padding-top: 15px;
     font-size: 12px;
-    background-image: url("/images/background.jpg");
+    background-image: url("/images/gallery/photo_04.jpg");
     background-color: lightblue;
+    background-size: 1400px 800px;
+    background-repeat: no-repeat;
   }
   .main {
     max-width: 320px;
