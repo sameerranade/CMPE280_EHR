@@ -10,19 +10,19 @@
 
     <title>Clinix - A ThemifyCloud Template</title>
     <script type="text/javascript">
-        function preloader(){
+        function preloader() {
             document.getElementById("loading").style.display = "none";
             document.getElementById("content").style.display = "block";
         }//preloader
         window.onload = preloader;
     </script>
     <!-- Bootstrap Core CSS -->
-    <link href="../public/stylesheets/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="../public/stylesheets/css/animate.css" rel="stylesheet" type="text/css">
-    <link href="../public/stylesheets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/css/animate.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/css/style.css" rel="stylesheet" type="text/css">
 
     <!-- Fonts -->
-    <link href="../public/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css'>
     <!-- IE8 support for HTML5 elements and media queries -->
@@ -43,7 +43,8 @@
             <div class="navbar-header page-scroll">
                 <ul class="nav navbar-nav">
                     <li class="page-scroll">
-                        <a href="#page-top" style="font-family: Arial, Helvetica, sans-serif "><i class="fa fa-home fa-lg" ></i> Sanjeevini EHR</a>
+                        <a href="#page-top" style="font-family: Arial, Helvetica, sans-serif "><i
+                                class="fa fa-home fa-lg"></i> Sanjeevini EHR</a>
                     </li>
                 </ul>
                 <!--<a class="navbar-brand" href="#page-top">Clinix</a>-->
@@ -58,29 +59,33 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <main>
+    <main style="float: left;
+    text-align: left;">
         <h2>List of People</h2>
         <div class="btns">
             <span onclick="$('ul#people-list').sortList();">Sort By First Name</span>
             <span onclick="$('ul#people-list').sortListLast();">Sort By Last Name</span>
         </div>
-        <div id="searchDir">Search The List:</div>
+        <div id="searchDir">Search The List:
 
-        <ul id="people-list" class="people-list">
-            <li>John&nbsp;<span class="last-name">Smith</span></li>
-            <li>Mike&nbsp;<span class="last-name">Appleseed</span></li>
-            <li>Aaron&nbsp;<span class="last-name">Paul</span></li>
-            <li>Taylor&nbsp;<span class="last-name">Bucknell</span></li>
-            <li>Ron&nbsp;<span class="last-name">Wanowski</span></li>
-            <li>Alec&nbsp;<span class="last-name">Greenburg</span></li>
-            <li>Ben&nbsp;<span class="last-name">Ryan</span></li>
-            <li>Catherine&nbsp;<span class="last-name">James</span></li>
-            <li>Joyce&nbsp;<span class="last-name">Crawly</span></li>
-        </ul>
+            <ul id="people-list" class="people-list">
+                <li>John&nbsp;<span class="last-name">Smith</span></li>
+                <li>Mike&nbsp;<span class="last-name">Appleseed</span></li>
+                <li>Aaron&nbsp;<span class="last-name">Paul</span></li>
+                <li>Taylor&nbsp;<span class="last-name">Bucknell</span></li>
+                <li>Ron&nbsp;<span class="last-name">Wanowski</span></li>
+                <li>Alec&nbsp;<span class="last-name">Greenburg</span></li>
+                <li>Ben&nbsp;<span class="last-name">Ryan</span></li>
+                <li>Catherine&nbsp;<span class="last-name">James</span></li>
+                <li>Joyce&nbsp;<span class="last-name">Crawly</span></li>
+            </ul>
+        </div>
+        <div>
+
+        </div>
     </main>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-    </div>
-
+</div>
 </body>
 </html>
