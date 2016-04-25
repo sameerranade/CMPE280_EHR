@@ -1,6 +1,3 @@
-/**
- * Created by Maithili on 4/24/2016.
- */
 //Sort by first name
 $(function() {
     $.fn.sortList = function() {
