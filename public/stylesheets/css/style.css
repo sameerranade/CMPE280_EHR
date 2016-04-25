@@ -967,7 +967,7 @@ div#loading {
     z-index: 1000;
     width: 115px;
     height: 119px;
-    background: url(../img/TemplateImg/loadingimage.gif) no-repeat;
+    background: url(/public/images/TemplateImg/loadingimage.gif) no-repeat;
     cursor: wait;                
     }
 .main_heading{
@@ -1447,19 +1447,24 @@ img.about-photo{
 	z-index: 5;
 }
 
+
+body {
+    margin:0;
+    font-family:helvetica neue,san-serif;
+}
+
 body {
     font-family: "Helvetica", Verdana, sans-serif;
-    background:#232323;
+
 }
 
 main {
     position:relative;
     width:400px;
-    height: 600px;
-    margin:7em auto;
+    margin:5em auto;
     padding:1em;
     background:#fff;
-    border-radius: .20em;
+    border-radius: .25em;
 }
 
 main:after {
