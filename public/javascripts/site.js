@@ -229,18 +229,23 @@ $( document ).ready(function() {
 	$(".home").css("height",height);
 	$(".home").css("max-width","100%");
 	
-	
-	
 	  
 	  
 	  function initialize()
 		{
-		var mapProp = {
-		  center:new google.maps.LatLng(51.508742,-0.120850),
-		  zoom:5,
+            var myLatLng = {lat: 37.335460, lng: -121.881082};
+
+            var mapProp = {
+		  center:new google.maps.LatLng(37.335460,-121.881082),
+		  zoom:10,
 		  mapTypeId:google.maps.MapTypeId.ROADMAP
 		  };
 		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Our Location!'
+            });
 		}
 
 		google.maps.event.addDomListener(window, 'load', initialize);

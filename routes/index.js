@@ -5,9 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('landingpage');
 });
-
-router.get('/home', function(req, res, next) {
-  res.render('landingpage');
+router.get('/login', function(req, res, next) {
+  res.render('index');
 });
 
 router.get('/plist', function(req, res, next) {
