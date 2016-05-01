@@ -8,172 +8,249 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clinix - A ThemifyCloud Template</title>
-
-
-    <link href="stylesheets/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="stylesheets/css/animate.css" rel="stylesheet" type="text/css">
-    <link href="stylesheets/css/style.css" rel="stylesheet" type="text/css">
+    <title>Sanjeevani Medical Hospital</title>
+    <script type="text/javascript">
+        function preloader() {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+    </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="/stylesheets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/css/animate.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/css/style.css" rel="stylesheet" type="text/css">
 
     <!-- Fonts -->
-    <link href="stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css'>
     <!-- IE8 support for HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-
     <![endif]-->
+
     <!--AngularJS Libraries-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 
 </head>
+
 <body ng-app="ehrApp" ng-controller="patientController" id="page-top" class="index" data-spy="scroll"
       data-target=".navbar-fixed-top">
-<div class="container">
-    <div class="row">
-        <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-left">
+<div id="loading"></div>
 
+<div id="content">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center">
+        <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <ul class="nav navbar-nav">
-                    <li class="page-scroll">
-                        <a href="#page-top" style="font-family: Arial, Helvetica, sans-serif "><i
-                                class="fa fa-home fa-lg"></i> Sanjeevini EHR</a>
-
-                </ul>
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <!--<a class="navbar-brand" href="#page-top">Clinix</a>-->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            </nav>
-        </nav>
-    </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="page-scroll">
+                        <a href="#page-top"><i class="fa fa-home fa-lg"></i> Home</a>
+                    </li>
 
-    <div class="row">
-        <div class=" col-md-4">
+                    <li class="page-scroll">
+                        <a href="#about"><i class="fa fa-users fa-lg"></i> About Us</a>
+                    </li>
 
-            <div class="form-group">
-                <div class="row">
-                    <h3 class=" col-sm-6">Patient List</h3><br><br>
-                    <div class="col-sm-6">
-                        <input class="form-control col-sm-6" id="searchinput" type="search" placeholder="Search..."/>
+
+                    <li class="page-scroll">
+                        <a href="#services"><i class="fa fa-cogs fa-lg"></i> Services</a>
+                    </li>
+
+
+                    <li class="page-scroll">
+                        <a href="/login"><i class="fa fa-sign-in"></i> Signin</a>
+                    </li>
+
+                    <li class="page-scroll">
+                        <a href="#signup"><span class="glyphicon glyphicon-plus-sign"></span> Signup</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header class="home">
+        <div class="home_wrap">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <div class="row">
+                            <h3 class="col-xs-12 col-md-6">Patient List</h3><br><br>
+                            <div class="col-xs-12 col-md-6">
+                                <input class="form-control col-xs-12 col-md-6" id="searchinput" type="search"
+                                       placeholder="Search..."/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="searchlist" class="col-xs-12 col-md-6 list-group" ng-repeat="patient in plist">
+                                <a class="col-xs-12 col-md-6 list-group-item"
+                                   ng-click="getPatientDetails(patient)">{{patient}}</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div id="searchlist" class=" col-sm-6 list-group " ng-repeat="patient in plist">
-                        <a class=" col-sm-8 list-group-item" ng-click="getPatientDetails(patient)">{{patient}}</a>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+
+                        <div class="form-group">
+                            &nbsp;
+                        </div>
+                        <div class="form-group">
+                            &nbsp;
+                        </div>
+
+                        <img src="images/gallery/photo_02.jpg" alt="..." class="col-md-2 control-label" height="70"
+                             width="10">
+                        <label class="col-md-4 control-label">
+                            <h1>
+                                {{pname}}
+                            </h1>
+                        </label>
                     </div>
+                    <div class="form-group">
+                        &nbsp;
+                    </div>
+                    <div class="form-group">
+                        &nbsp;
+                    </div>
+                    <div class="form-group">
+                        &nbsp;
+                    </div>
+
+                    <div class="form-group">
+                        <h4><label class="col-xs-6 col-md-2 control-label">User ID</label></h4>
+                        <h4><label id="lblid" class="col-xs-6 col-md-4 control-label">{{uid}}</label></h4>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <h4><label class="col-xs-6 col-md-2 control-label">Height</label></h4>
+                        <h4><label id="lblheight" class="col-xs-6 col-md-4 control-label">{{height}}</label></h4>
+
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <h4><label class="col-xs-6 col-md-2 control-label">Weight</label></h4>
+                        <h4><label id="lblweight" class="col-xs-6 col-md-4 control-label">{{weight}}</label></h4>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <h4><label class="col-xs-6 col-md-2 control-label">Address</label></h4>
+                        <h4><label id="lbladdress" class="col-xs-6 col-md-4 control-label">{{address}}</label></h4>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <h4><label class="col-xs-6 col-md-2 control-label">Phone</label></h4>
+
+                        <h4><label id="lblphone" class="col-xs-6 col-md-4 control-label">{{phone}}</label></h4>
+
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <h4><label class="col-xs-6 col-md-2 control-label">Emergency Phone</label></h4>
+
+                        <h4><label id="lblemercon" class="col-xs-6 col-md-4 control-label">{{emerphone}}</label>
+                        </h4>
+
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <h4><label class="col-xs-6 col-md-2 control-label">Blood Group</label></h4>
+
+                        <h4><label id="lblrelationship" class="col-xs-6 col-md-4 control-label">{{bgroup}}</label>
+                        </h4>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <h4><label class="col-xs-6 col-md-2 control-label">Gender</label></h4>
+
+                        <h4><label id="lblbldtyp" class="col-xs-6 col-md-4 control-label">{{gender}}</label></h4>
+
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <h4><label class="col-xs-6 col-md-2 control-label">Ethnicity</label></h4>
+
+                        <h4><label id="lblgender" class="col-xs-6 col-md-4 control-label">{{ethnicity}}</label>
+                        </h4>
+
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <h4><label class="col-xs-6 col-md-2 control-label">Languages</label></h4>
+
+                        <h4><label id="lblethnicity" class="col-xs-6 col-md-4 control-label">{{languages}}</label>
+                        </h4>
+
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <h4><label class="col-xs-6 col-md-2 control-label">Birthday</label></h4>
+                        <h4><label id="lbllanguage" class="col-xs-6 col-md-4 control-label">{{bday}}</label></h4>
+                    </div>
+                    <br>
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
-            <div style=" position: absolute;
-                top: 20%;
-                left: 10%;
-                margin-top: -5px;
-                margin-left: -50px;
-                width: 500px;
-                height: 500px;
-                padding-top: 60px">
-
-                <div class="form-group">
-                    <img src="images/team/doctor.jpg" alt="..." class="img-rounded col-md-4 control-label" height="100"
-                         width="100">
-                    <label class="col-md-6 control-label">
-                        <h1>
-                            {{pname}}
-                        </h1>
-                        <br>
-                        <br>
-                    </label>
-                </div>
-                <div class="form-group"><label class="col-sm-4 control-label">User ID</label>
-                    <label id="lblid" class="col-md-6 control-label">{{uid}}</label>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Height</label>
-
-                    <label id="lblheight" class="col-md-6 control-label">{{height}}</label>
-
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Weight</label>
-                    <label id="lblweight" class="col-md-6 control-label">{{weight}}</label>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Address</label>
-
-                    <label id="lbladdress" class="col-md-6 control-label">{{address}}</label>
-
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Phone</label>
-
-                    <label id="lblphone" class="col-md-6 control-label">{{phone}}</label>
-
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Emergency Phone</label>
-
-                    <label id="lblemercon" class="col-md-6 control-label">{{emerphone}}</label>
-
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Blood Group</label>
-
-                    <label id="lblrelationship" class="col-md-6 control-label">{{bgroup}}</label>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Gender</label>
-
-                    <label id="lblbldtyp" class="col-md-6 control-label">{{gender}}</label>
-
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Ethnicity</label>
-
-                    <label id="lblgender" class="col-md-6 control-label">{{ethnicity}}</label>
-
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Languages</label>
-
-                    <label id="lblethnicity" class="col-md-6 control-label">{{languages}}</label>
-
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Birthday</label>
-                    <label id="lbllanguage" class="col-md-6 control-label">{{bday}}</label>
-
-                </div>
-                <br>
-            </div>
-
-        </div>
-    </div>
+    </header>
 </div>
 
-<script type="text/javascript" src="javascripts/controllers/patientController.js"></script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; 2016 - Ciphers
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
-<script src="javascripts/bootstrap-list-filter.src.js"></script>
-<script>
-    $('#searchlist').btsListFilter('#searchinput', {});
-</script>
+<div class="scroll-top page-scroll visible-xs visble-sm">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+</div>
+
+<script src="/javascripts/controllers/patientController.js"></script>
+<script src="/javascripts/jquery-1.10.2.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/jquery.isotope.min.js"></script>
+<script src="/javascripts/jquery.easing.js"></script>
+<script src="/javascripts/classie.js"></script>
+<script src="/javascripts/jquery.appear.js"></script>
+<script src="/javascripts/jquery.flexslider-min.js"></script>
+<script src="/javascripts/jquery.knob.js"></script>
+<script src="/javascripts/countUp.min.js"></script>
+<script src="/javascripts/bootstrap-list-filter.src.js"></script>
+<!--<script>-->
+<!--$('#searchlist').btsListFilter('#searchinput', {});-->
+<!--</script>-->
 
 
 </body>
