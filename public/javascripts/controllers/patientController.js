@@ -3,15 +3,28 @@
  */
 
 angular.module('ehrApp', []).controller('patientController', function ($scope, $http) {
+
     $http.get('http://localhost:3000/patients').success(function (res) {
+
+        //for (var i = 0; i < res.length; i++) {
+        //    $scope.plist.push(res[i].user_firstname);
+        //}
+        //console.log($scope.plist);
+
+        $scope.currentPage = 0;
+        $scope.pageSize = 2;
         $scope.plist = [];
-        for(var i=0; i<res.length;i++){
+        //$scope.data = [];
+        $scope.numberOfPages = function () {
+            return Math.ceil($scope.plist.length / $scope.pageSize);
+        }
+        for (var i = 0; i < 5; i++) {
             $scope.plist.push(res[i].user_firstname);
         }
-        console.log($scope.plist);
-    })
 
-    $scope.getPatientDetails = function(pName){
+    });
+
+    $scope.getPatientDetails = function (pName) {
         console.log(pName);
         var url = 'http://localhost:3000/patients/' + pName + '/';
         $http.get(url).success(function (res) {
@@ -30,5 +43,10 @@ angular.module('ehrApp', []).controller('patientController', function ($scope, $
             $scope.languages = res[0].languagetype;
             $scope.bday = res[0].Birthday;
         });
+    }
+}).filter('startFrom', function () {
+    return function (input, start) {
+        start = +start; //parse to int
+        return input.slice(start);
     }
 });
