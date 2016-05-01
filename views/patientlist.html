@@ -84,84 +84,79 @@
                          width="100">
                     <label class="col-md-6 control-label">
                         <h1>
-                            Patient Name
+                            {{pname}}
                         </h1>
+                        <br>
+                        <br>
                     </label>
                 </div>
                 <div class="form-group"><label class="col-sm-4 control-label">User ID</label>
-                    <label id="lblid" class="col-md-6 control-label">Fetch User ID from DB</label>
+                    <label id="lblid" class="col-md-6 control-label">{{uid}}</label>
                 </div>
                 <br>
                 <div class="form-group">
-                    <label class="col-sm-4 control-label">User ID</label>
+                    <label class="col-sm-4 control-label">Height</label>
 
-                    <label id="lblheight" class="col-md-6 control-label">Fetch HEIGHT from DB</label>
-
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">User ID</label>
-                    <label id="lblweight" class="col-md-6 control-label">Fetch WEIGHT from DB</label>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">User ID</label>
-
-                    <label id="lbladdress" class="col-md-6 control-label">Fetch ADDRESS from DB</label>
+                    <label id="lblheight" class="col-md-6 control-label">{{height}}</label>
 
                 </div>
                 <br>
                 <div class="form-group">
-                    <label class="col-sm-4 control-label">User ID</label>
+                    <label class="col-sm-4 control-label">Weight</label>
+                    <label id="lblweight" class="col-md-6 control-label">{{weight}}</label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Address</label>
 
-                    <label id="lblphone" class="col-md-6 control-label">Fetch PHONE from DB</label>
+                    <label id="lbladdress" class="col-md-6 control-label">{{address}}</label>
 
                 </div>
                 <br>
                 <div class="form-group">
-                    <label class="col-sm-4 control-label">User ID</label>
+                    <label class="col-sm-4 control-label">Phone</label>
 
-                    <label id="lblemercon" class="col-md-6 control-label">Fetch EMERGENCY CONTACT from DB</label>
-
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">User ID</label>
-
-                    <label id="lblrelationship" class="col-md-6 control-label">Fetch RELATIONSHIP from DB</label>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">User ID</label>
-
-                    <label id="lblbldtyp" class="col-md-6 control-label">Fetch BLOOD TYPE from DB</label>
+                    <label id="lblphone" class="col-md-6 control-label">{{phone}}</label>
 
                 </div>
                 <br>
                 <div class="form-group">
-                    <label class="col-sm-4 control-label">User ID</label>
+                    <label class="col-sm-4 control-label">Emergency Phone</label>
 
-                    <label id="lblgender" class="col-md-6 control-label">Fetch GENDER from DB</label>
-
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">User ID</label>
-
-                    <label id="lblethnicity" class="col-md-6 control-label">Fetch ETHNICITY from DB</label>
+                    <label id="lblemercon" class="col-md-6 control-label">{{emerphone}}</label>
 
                 </div>
                 <br>
                 <div class="form-group">
-                    <label class="col-sm-4 control-label">User ID</label>
-                    <label id="lbllanguage" class="col-md-6 control-label">Fetch LANGUAGE from DB</label>
+                    <label class="col-sm-4 control-label">Blood Group</label>
+
+                    <label id="lblrelationship" class="col-md-6 control-label">{{bgroup}}</label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Gender</label>
+
+                    <label id="lblbldtyp" class="col-md-6 control-label">{{gender}}</label>
 
                 </div>
                 <br>
                 <div class="form-group">
-                    <label class="col-sm-4 control-label">User ID</label>
+                    <label class="col-sm-4 control-label">Ethnicity</label>
 
-                    <label id="lblbday" class="col-md-6 control-label">Fetch BIRTHDAY from DB</label>
+                    <label id="lblgender" class="col-md-6 control-label">{{ethnicity}}</label>
+
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Languages</label>
+
+                    <label id="lblethnicity" class="col-md-6 control-label">{{languages}}</label>
+
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Birthday</label>
+                    <label id="lbllanguage" class="col-md-6 control-label">{{bday}}</label>
 
                 </div>
                 <br>
@@ -171,7 +166,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="javascripts/patientController.js"></script>
+<script type="text/javascript" src="javascripts/controllers/patientController.js"></script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
