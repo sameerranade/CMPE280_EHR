@@ -1,39 +1,66 @@
 var express = require('express');
-var mysql = require('./mysql.js');
+var mysql = require('mysql');
 var router = express.Router();
 
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'SRmay@123',
+    database: 'EHR'
+});
+
+connection.connect();
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('landingpage');
+router.get('/', function (req, res, next) {
+    res.render('landingpage');
 });
-router.get('/login', function(req, res, next) {
-  res.render('index');
+router.get('/login', function (req, res, next) {
+    res.render('index');
 });
 
-router.get('/plist', function(req, res, next) {
+router.get('/plist', function (req, res, next) {
 
-  var query = "select * from sanjeevani.profile ;";
-  console.log("Query is:" + query);
 
-  mysql.fetchData(function(err, results) {
-    if (err) {
-      throw err;
-    } else {
-      if (results.length > 0) {
-        for ( var i = 0; i < results.length; i++) {
-          console.log(results[i]);
+    res.render('patientlist');
+});
+
+router.get('/patients', function (req, res, next) {
+
+
+    connection.query('SELECT * from users', function (err, rows, fields) {
+        if (err) {
+            throw err;
         }
-        patient_data = results;
-        console.log(patient_data);
-        res.render('patientlist', {
-          analysis_data : patient_data
-        });
-      }
-    }
-  }, query);
+        else {
+            res.json(rows);
+        }
+        console.log('The solution is: ', rows);
+    });
 
+});
 
-  //res.render('patientlist');
+router.get('/patients/:pName', function (req, res, data) {
+    var patientName = req.params.pName;
+
+    connection.query('SELECT uer_id from users where user_firstName = ?', patientName, function (err, rows, fields) {
+        if (err) {
+            throw err;
+        }
+        else {
+            connection.query('SELECT * from profile where uer_id = ?', rows[0].uer_id, function (err, rows2, fields) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    res.json(rows2);
+                }
+                console.log('The solution is: ', rows2);
+            });
+
+        }
+
+    });
 });
 
 module.exports = router;

@@ -1,14 +1,13 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mysql = require('mysql');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var patient_details = require('./routes/patient_details');
-
 
 var app = express();
 
@@ -24,6 +23,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//app.use(bodyParser.urlencoded({ extended: true }));   // Use qs library, Rich-objects and Array encoding supported, JSON like Experience
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.use('/', routes);
 app.use('/patient_details', patient_details);
@@ -60,6 +67,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
