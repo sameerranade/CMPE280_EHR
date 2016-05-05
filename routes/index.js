@@ -5,8 +5,8 @@ var router = express.Router();
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'SRmay@123',
-    database: 'EHR'
+    password: 'maithili@123',
+    database: 'sanjeevani'
 });
 
 connection.connect();
@@ -17,6 +17,10 @@ router.get('/', function (req, res, next) {
 });
 router.get('/login', function (req, res, next) {
     res.render('index');
+});
+
+router.get('/signup', function (req, res, next) {
+    res.render('signup');
 });
 
 router.get('/plist', function (req, res, next) {
