@@ -82,29 +82,36 @@
                 </div>
                 </div>
             </div>
-        <div class="row">
+        <div class="row" style="margin-top: 10px">
             <div class="col-md-4">
-                <form role="form" style="color: #007F52">
+                <form role="form" style="color: #007F52;font-weight: bold" id ="signupForm" name="signupForm" method="POST" action="/signup">
                     <div class=" form-group" >
+                        <label id="saveResult" style="color: #2c3e50"></label><br>
                         <label for="name">Name </label>
-                        <input type="text" class="form-control" id="name">
+                        <input type="text" class="form-control" id="name" required>
                         <label for="user_Name">User Name </label>
-                        <input type="text" class="form-control" id="user_Name">
+                        <input type="text" class="form-control" id="user_Name" required>
                         <label for="user_type">User Type </label>
-                        <input type="text" class="form-control" id="user_type">
+                        <input type="text" class="form-control" id="user_type" required>
                         <label for="user_description">Description </label>
-                        <input type="text" class="form-control" id="user_description">
+                        <input type="text" class="form-control" id="user_description" required>
                         <label for="user_pass">Password </label>
-                        <input type="password" class="form-control" id="user_pass">
+                        <input type="password" class="form-control" id="user_pass" required>
+                        <label for="user_pass">Confirm Password </label>
+                        <input type="password" class="form-control" id="confirm_pass" required
+                               autocomplete="false" onkeyup="checkConfirmPassword(this.value)">
+                        <label id="lblPassword" style="float:left"></label>
                         <a class="pull-right" href="#">Forgot password?</a>
-                        <button type="submit" class="btn btn btn-primary" style="background-color:#FFA500;font-weight: bold">
+                        <button type="submit" id="btnSignup" class="btn btn btn-primary" style="background-color:#FFA500;font-weight: bold">
                             Sign Up
                         </button>
+
                     </div>
                 </form>
             </div>
             </div>
         </div>
-
+</div>
 </body>
+<script src="/javascripts/signup.js"></script>
 </html>
