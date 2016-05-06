@@ -5,10 +5,10 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 
-    <link rel="stylesheet" href="/stylesheets/css/style.css" type="text/css">
+
     <link rel="stylesheet" href="/stylesheets/css/patient_details.css" type="text/css">
+    <script src="/javascripts/controllers/main.js"></script>
     <script src="/javascripts/controllers/patientDetail.js"></script>
-    <script src="/javascripts/controllers/patientController.js"></script>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -25,10 +25,10 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
-<body ng-controller="PatientController">
+<body ng-controller="PatientDetail">
   </br></br>
+  <div class="col-md-4 col-xs-12">
     <div class="nav-side-menu">
-      <div class="col-xs-12 col-md-12">
       <div class="brand"> <a>Sanjeevani Hospitals</a></div>
       <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
@@ -82,28 +82,27 @@
      </div>
   </div>
 
-    <div class="right">
-    <div class="col-xs-12 col-md-12">
-     <div class="collapse navbar-collapse navbar-left" id="example-navbar">
-      <ul class="nav navbar-nav">
-                  <li><a href="#allergies"> <span class="glyphicon glyphicon-grain"> </span>  Allergies</a></li>
-                  <li><a href="#medical_history"> <span class="glyphicon glyphicon-folder-open"> </span>  Medical History</a></li>
-                  <li><a href="#test_records"> <span class="glyphicon glyphicon-heart-empty"> </span>  Medical Test Records</a></li>
-                  <li><a href="#medications"> <span class="glyphicon glyphicon-tint"> </span>  Medications</a></li>
-                  <li><a href="vaccination"> <span class="glyphicon glyphicon-ok-sign"> </span>  Vaccination & Immunizations</a></li>
-          </ul>
+  <div class="col-md-8 col-xs-12">
+         <div class="collapse navbar-collapse navbar-left" id="example-navbar">
+          <ul class="nav navbar-nav">
+                      <li><a href="#allergies"> <span class="glyphicon glyphicon-grain"> </span>  Allergies</a></li>
+                      <li><a href="#medical_history"> <span class="glyphicon glyphicon-folder-open"> </span>  Medical History</a></li>
+                      <li><a href="#test_records"> <span class="glyphicon glyphicon-heart-empty"> </span>  Medical Test Records</a></li>
+                      <li><a href="#medications"> <span class="glyphicon glyphicon-tint"> </span>  Medications</a></li>
+                      <li><a href="#vaccination"> <span class="glyphicon glyphicon-ok-sign"> </span>  Vaccination & Immunizations</a></li>
+              </ul>
+            </div>
+          <br/><br/>
+
+        <div class="col-md-4">
+        <div id="main">
+
+        <!-- angular templating -->
+    		<!-- this is where content will be injected -->
+        <div ng-view>
         </div>
       </div>
-    </div>
-
-    <div id="main">
-
-    <!-- angular templating -->
-		<!-- this is where content will be injected -->
-    <div ng-view>
-    </div>
-
+      </div>
   </div>
-
 </body>
 </html>
