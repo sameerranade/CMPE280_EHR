@@ -3977,7 +3977,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 	border-style: solid;
 	border-width: 6px;
 	color: #FFA500;
-    text-shadow: 2px 2px #ff0000;
+    'text-shadow: 2px 2px #ff0000;
 
 }
 .navbar-default .navbar-nav > .active > a,
@@ -3988,7 +3988,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 	border-style: solid;
 	border-width: 6px;
 	color: #FFA500;
-    text-shadow: 2px 2px #ff0000;
+    'text-shadow: 2px 2px #ff0000;
 
 }
 .navbar-default .navbar-nav > .disabled > a,

@@ -5,11 +5,19 @@ var router = express.Router();
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'nishanth',
-    database: 'yelp'
+    password: 'maithili@123',
+    database: 'sanjeevani',
+    port : '3306'
 });
 
-connection.connect();
+connection.connect( function(err){
+    if (err){
+        throw err;
+    }
+    else {
+        console.log('Connected to DB.');
+    }
+});
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -17,6 +25,38 @@ router.get('/', function (req, res, next) {
 });
 router.get('/login', function (req, res, next) {
     res.render('index');
+});
+router.get('/signup', function (req, res, next) {
+    res.render('signup');
+});
+
+router.post('/signup',function(req,res){
+
+    console.log("Inside post app.js");
+
+    var name = req.body.name;
+    var  user_Name  = req.body.user_Name ;
+    var user_type  = req.body.user_type ;
+    var user_description  = req.body.user_description ;
+    var user_pass  = req.body.user_pass ;
+
+    console.log(user_Name);
+    console.log(user_pass,name,user_description,user_type);
+    connection.query('INSERT INTO users ' +
+        '(user_type ,user_description,user_Name ,user_pass,name) VALUES ' +
+        '("'+user_type+'","'+user_description+'","'+user_Name+'","'+user_pass+'","'+name+'")',
+        function(err, fields) {
+            if(err)
+            {
+                throw err;
+            }
+            else
+            {
+                res.end("Server received the data");
+            }
+        });
+
+    connection.end();
 });
 
 router.get('/plist', function (req, res, next) {
