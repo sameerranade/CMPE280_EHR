@@ -957,6 +957,7 @@ border-top: 22px solid #3fbfE1;
 .slides li{
 	text-align:center;
     color: white;
+    font-size: 100px;
     /*text-shadow: 2px 2px #ff0000;*/
 
 }
