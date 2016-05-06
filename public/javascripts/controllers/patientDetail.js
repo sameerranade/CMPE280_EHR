@@ -25,8 +25,3 @@
   			})
 
   	});
-
-    ehrApp.controller('PatientController', function($scope) {
-    	   $scope.greeting = 'Hola!';
-
-        };

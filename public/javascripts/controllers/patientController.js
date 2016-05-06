@@ -2,7 +2,7 @@
  * Created by sameer on 4/30/16.
  */
 
-angular.module('ehrApp', []).controller('patientController', function ($scope, $http) {
+angular.module('ehrApp').controller('patientController', function ($scope, $http) {
 
     $http.get('http://localhost:3000/patients').success(function (res) {
 
