@@ -37,7 +37,7 @@ h6 {
 	font-family: 'Titillium Web',"Helvetica Neue", sans-serif;
 	line-height: 1.11;
     font-weight:bold;
-    color: #007F52;
+    color: #005A98;
 }
 
 hr.star-light,
@@ -221,7 +221,7 @@ header  .menu-icon:hover i {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
-    background-color: #007F52;
+    background-color: #005A98;
     /*background: transparent;*/
     border-color: transparent;
 
@@ -398,7 +398,7 @@ section.success {
 }
 
 footer {
-    color: #FFA500;
+    color: white;
 }
 
 footer h3 {
@@ -416,7 +416,7 @@ footer .footer-col {
 
 footer .footer-below {
     padding: 25px 0;
-    background-color: #007F52;
+    background-color: #005A98;
 }
 
 .btn-social {
@@ -531,10 +531,10 @@ header.home{
 	min-width: 100%;
 	padding: 0px 0 0px 0;
 }
-.home_wrap{
-	background-image:url("/images/TemplateImg/bg-home.png");
+/*.home_wrap{*/
+	/*background-image:url("/images/TemplateImg/bg-home.png");*/
 
-}
+/*}*/
 .navbar-fixed-top{
 	display:none;
 }
@@ -956,8 +956,8 @@ border-top: 22px solid #3fbfE1;
 }
 .slides li{
 	text-align:center;
-    color: #FFA500;
-    text-shadow: 2px 2px #ff0000;
+    color: white;
+    /*text-shadow: 2px 2px #ff0000;*/
 
 }
 
@@ -1134,14 +1134,14 @@ div#loading {
 	margin-top: 4px;
 	margin-bottom: 4px;
 	border: 0;
-	border-top: 2px solid #007F52;
+	border-top: 2px solid #005A98;
 }
 .section-heading .heading-text{
 	
 	padding: 0 .25em;
 	font-size:2.5em;
 	text-transform:uppercase;
-    color: #FFA500;
+    color: #005A98;
 }
 .section-heading .heading-width{
 	width:0.01%;
@@ -1323,10 +1323,10 @@ img.about-photo{
 	
 }
 .primary-background{
-	background-color:#007F52;
-	color:#fff;
+	background-color:white;
+	color:#005A98;
 	padding: 17px 20px;
-	min-height:462px;
+	min-height:564px;
 	
 }
 #about .list-unstyled{
