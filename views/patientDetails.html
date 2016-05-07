@@ -16,6 +16,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Patient Details </title>
@@ -103,16 +104,76 @@
 
             <!-- angular templating -->
             <!-- this is where content will be injected -->
+            <div class="container dynamicTile">
+                <div class="row ">
+                    <div class="col-sm-2 col-xs-4">
+                        <div id="tile1" class="tile">
+                            <div class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="/images/bp.png"
+                                             class="img-responsive" onclick="displayBPChart()"/>
+                                        <h6 style="text-align: center;">
+                                            Blood Pressure Chart
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
 
-            <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-            <div ng-view>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-xs-4">
+                        <div id="tile2" class="tile">
+                            <div class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="/images/weight.png" onclick="displayBWeightChart()"
+                                             class="img-responsive"/>
+                                        <h6 style="text-align: center;">
+                                            Weight Chart
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-xs-4">
+                        <div id="tile3" class="tile">
+                            <div class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="/images/allergies.png" onclick="displayAllergyChart()"
+                                             class="img-responsive"/>
+                                        <h6 style="text-align: center;">
+                                            Allergies Chart
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="container" style="min-width: 813px; height: 400px; margin: 0 auto; display: none"></div>
+            </div>
+            <div class="row">
+                <div id="container2" style="min-width: 813px; height: 400px; margin: 0 auto; display: none"></div>
+            </div>
+            <div class="row">
+                <div id="container3" style="min-width: 813px; height: 400px; margin: 0 auto; display: none"></div>
             </div>
         </div>
     </div>
 </div>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
-
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
 
 <script>
     $(function () {
@@ -166,10 +227,116 @@
                 },
                 data: [{
                     y: 75
-                }, 74, 72, 79, 71, 76, 75, 73,77, 78, 71,79]
+                }, 74, 72, 79, 71, 76, 75, 73, 77, 78, 71, 79]
             }]
         });
     });
+</script>
+<script>
+    $(function () {
+        $('#container2').highcharts({
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: 'Monthly Body Wight'
+            },
+            xAxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            },
+            yAxis: {
+                title: {
+                    text: 'Body Weight in KG'
+                },
+                labels: {
+                    formatter: function () {
+                        return this.value + '°';
+                    }
+                }
+            },
+            tooltip: {
+                crosshairs: true,
+                shared: true
+            },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        radius: 4,
+                        lineColor: '#666666',
+                        lineWidth: 1
+                    }
+                }
+            },
+            series: [{
+                name: 'Body Weight in KG',
+                marker: {
+                    symbol: 'square'
+                },
+                data: [75, 74.5, 75, 74, 74, 73, 73.5, {
+                    y: 74
+                }, 75, 74, 75, 75]
+            }]
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $('#container3').highcharts({
+            chart: {
+                type: 'column',
+                options3d: {
+                    enabled: true,
+                    alpha: 10,
+                    beta: 25,
+                    depth: 70
+                }
+            },
+            title: {
+                text: 'Allergy Severity for the Patient'
+            },
+            subtitle: {
+                text: ''
+            },
+            plotOptions: {
+                column: {
+                    depth: 25
+                }
+            },
+            xAxis: {
+                categories: Highcharts.getOptions().lang.shortMonths
+            },
+            yAxis: {
+                title: {
+                    text: null
+                }
+            },
+            series: [{
+                name: 'Allergy Severity',
+                data: [null, null, null, 4, 3, 2, null, null, null, 1, null, null]
+            }]
+        });
+    });
+</script>
+
+<script>
+    function displayBPChart() {
+        document.getElementById('container2').style.display = 'none';
+        document.getElementById('container3').style.display = 'none';
+        document.getElementById('container').style.display = 'block';
+    }
+
+    function displayBWeightChart(){
+        document.getElementById('container').style.display = 'none';
+        document.getElementById('container3').style.display = 'none';
+        document.getElementById('container2').style.display = 'block';
+    }
+
+    function  displayAllergyChart(){
+        document.getElementById('container').style.display = 'none';
+        document.getElementById('container2').style.display = 'none';
+        document.getElementById('container3').style.display = 'block';
+    }
 </script>
 </body>
 </html>

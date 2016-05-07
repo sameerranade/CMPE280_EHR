@@ -5,8 +5,8 @@ var router = express.Router();
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'nishanth',
-    database: 'yelp',
+    password: 'SRmay@123',
+    database: 'EHR',
     port : '3306'
 });
 
@@ -101,6 +101,10 @@ router.get('/patients/:pName', function (req, res, data) {
         }
 
     });
+});
+
+router.get('/patientSummary', function (req, res, next) {
+    res.render('patientSummary');
 });
 
 module.exports = router;
