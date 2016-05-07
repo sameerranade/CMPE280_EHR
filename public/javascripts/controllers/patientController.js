@@ -12,7 +12,7 @@
         //console.log($scope.plist);
 
         $scope.currentPage = 0;
-        $scope.pageSize = 2;
+        $scope.pageSize = 3;
         $scope.plist = [];
         //$scope.data = [];
         $scope.numberOfPages = function () {
