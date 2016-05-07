@@ -1455,19 +1455,7 @@ img.about-photo{
 	top: 0;
 	z-index: 5;
 }
-/*.video-container{*/
-    /*position: absolute;*/
-    /*z-index: -1000;*/
-    /*opacity: 0.78;*/
-    /*min-width: 100%;*/
-    /*min-height: 100%;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*z-index: -1000;*/
-    /*overflow: hidden;*/
-    /*object-fit: cover;*/
-    /*left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%);*/
-/*}*/
+
 video {
     position: absolute;
     z-index: -1;
