@@ -9,19 +9,24 @@ var ehrApp = angular.module('ehrApp',['ngRoute']);
   				controller  : 'PatientDetail'
   			})
 
-  			.when('/size', {
-  				templateUrl : 'patient_pages/size.html',
+  			.when('/medical_history', {
+  				templateUrl : 'patient_pages/medical_history.html',
   				controller  : 'PatientDetail'
   			})
 
   			// route for the cheese page
-  			.when('/cheese', {
-  				templateUrl : 'patient_pages/cheese.html',
+  			.when('/medications', {
+  				templateUrl : 'patient_pages/medications.html',
           controller  : 'PatientDetail'
   			})
 
-  			.when('/toppings', {
-  				templateUrl : 'patient_pages/toppings.html',
+  			.when('/vaccination', {
+  				templateUrl : 'patient_pages/vaccination.html',
+          controller  : 'PatientDetail'
+  			})
+
+        .when('/test_records', {
+  				templateUrl : 'patient_pages/test_records.html',
           controller  : 'PatientDetail'
   			})
 

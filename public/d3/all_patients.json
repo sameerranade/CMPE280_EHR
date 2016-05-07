@@ -1,0 +1,181 @@
+{
+ "name": "Sanjeevani",
+ "children": [
+  {
+   "name": "Cardiology",
+   "children": [
+    {
+     "name": "Dr. Jason Bourne",
+     "children": [
+      {"name": "David Webb", "size": 3938},
+      {"name": "John Michael Kane", "size": 3812},
+      {"name": "Charles Briggs", "size": 6714},
+      {"name": "Adam Stone", "size": 743}
+     ]
+    },
+    {
+     "name": "Dr. Jor El",
+     "children": [
+      {"name": "Trustin Enfield", "size": 3534},
+      {"name": "Ludwig Von Drake", "size": 5731},
+      {"name": "Dru Zod", "size": 7840}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Oncology",
+   "children": [
+    {
+     "name": "Dr. Heisenberg",
+     "children": [
+      {"name": "Jesse Pinkman", "size": 1983},
+      {"name": "Akash Vukoti", "size": 2047},
+      {"name": "Jay Williams", "size": 1375}
+     ]
+    },
+    {
+     "name": "Dr. Jonathan Crane",
+     "children": [
+      {"name": "Thomas Wayne", "size": 1983},
+      {"name": "Harvey Dent", "size": 2047}
+     ]
+   },
+   {
+    "name": "Dr. Robert Neville",
+    "children": [
+     {"name": "Selina Kyle", "size": 1983},
+     {"name": "Balaji Narayan", "size": 2047},
+     {"name": "Tim Drake", "size": 1375},
+     {"name": "Monty Sunderstien", "size": 2042}
+    ]
+   }
+   ]
+  },
+  {
+   "name": "Paediatrics",
+   "children": [
+    {
+     "name": "Dr. Keyser Soze",
+     "children": [
+      {"name": "Jack Baer", "size": 721},
+      {"name": "Todd Hockney", "size": 4294},
+      {"name": "Michael Keaton", "size": 9800},
+      {"name": "Kurt Kobayashi", "size": 1314},
+      {"name": "Jason Von", "size": 2220}
+     ]
+    },
+    {
+     "name": "Dr. Christopher Sauron",
+     "children": [
+      {"name": "Samwise Gamgee", "size": 721},
+      {"name": "Victor Logolas", "size": 4294},
+      {"name": "Aregorn Ellasor", "size": 9800},
+      {"name": "Fred Baggins", "size": 1314}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "psychiatrist",
+   "children": [
+     {
+      "name": "Dr. Jonathan Osterman",
+      "children": [
+       {"name": "Peter Parker", "size": 721},
+       {"name": "James Veron", "size": 4294},
+       {"name": "Wilson Fisk", "size": 9800},
+       {"name": "Matthew Murdock", "size": 1314}
+      ]
+     },
+     {
+      "name": "Dr. Sanjeev Rao",
+      "children": [
+       {"name": "Lily Jose", "size": 721},
+       {"name": "Rosie Thomas", "size": 4294},
+       {"name": "Solf Kimblee", "size": 9800},
+       {"name": "Light Gai", "size": 1314}
+      ]
+    }
+   ]
+  },
+  {
+   "name": "Dentist",
+   "children": [
+     {
+      "name": "Dr. Edward Elric",
+      "children": [
+       {"name": "Alphonse Elric", "size": 1082},
+       {"name": "Roy Mustang", "size": 1336},
+       {"name": "Winry Rockbell", "size": 1336},
+       {"name": "Youswell Ramsey", "size": 1336},
+       {"name": "Izumi Curtis", "size": 1336},
+       {"name": "Trisha Elric", "size": 1336},
+       {"name": "Selim Bradley", "size": 1336}
+      ]
+    }
+   ]
+  },
+  {
+   "name": "Neurologist",
+   "children": [
+    {
+     "name": "Dr. Victor Creed",
+     "children": [
+      {"name": "Raijin Kiri", "size": 9354},
+      {"name": "Jon Whitner", "size": 1233}
+     ]
+    },
+    {
+     "name": "Dr. Leonid Pavel",
+     "children": [
+      {"name": "Andrew Bond", "size": 3165},
+      {"name": "Talia Dorrence", "size": 2815},
+      {"name": "James Logan", "size": 3366}
+     ]
+    },
+    {
+     "name": "Dr. Ezra Kramer",
+     "children": [
+      {"name": "Brian Shisui", "size": 6367},
+      {"name": "Pater Dager", "size": 1229},
+      {"name": "Sumail Hassan", "size": 2059},
+      {"name": "Kurt  Cobain", "size": 2291}
+     ]
+    },
+    {"name": "Dr. Pamela Landy", "size": 5559}
+   ]
+  },
+  {
+   "name": "Microbiologist",
+   "children": [
+    {
+     "name": "Dr. Noah Vosen",
+     "children": [
+      {"name": "Ravi Rubmel", "size": 1302},
+      {"name": "Alejandro Gonzalez", "size": 24593},
+      {"name": "Gilbert Melendez", "size": 652},
+      {"name": "Nate Diaz", "size": 636},
+      {"name": "Nick Diaz", "size": 6703}
+     ]
+    },    {
+     "name": "Dr. Thomas Anderson",
+     "children": [
+      {"name": "Robbie Lawler", "size": 2313},
+      {"name": "Benson Henderson", "size": 1880},
+      {"name": "Randy Couture", "size": 1701},
+      {"name": "Max Payne", "size": 1117}
+     ]
+    },
+    {
+     "name": "Dr. Bill Hobbins",
+     "children": [
+      {"name": "Jimmy Lawler", "size": 20859},
+      {"name": "Elvis Presley", "size": 4614},
+      {"name": "Juan Carlos", "size": 10530}
+     ]
+    }
+   ]
+  }
+ ]
+}
