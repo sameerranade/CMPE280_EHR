@@ -2,22 +2,23 @@ var express = require('express');
 var mysql = require('mysql');
 var router = express.Router();
 
-/*
+
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'SRmay@123',
-    database: 'EHR',
+    password: 'maithili@123',
+    database: 'sanjeevani',
     port : '3306'
 });
-*/
+
+/*
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'nishanth',
     database: 'yelp',
     port : '3306'
-});
+});*/
 
 connection.connect( function(err){
     if (err){
@@ -118,6 +119,10 @@ router.get('/patientSummary', function (req, res, next) {
 
 router.get('/doctorSummary', function (req, res, next) {
     res.render('doctorSummary');
+});
+
+router.get('/hospitalDashboard', function (req, res, next) {
+    res.render('hospitalDashboard');
 });
 
 module.exports = router;

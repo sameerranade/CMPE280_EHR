@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sanjeevani Medical Hospital</title>
+
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="/javascripts/hospitalDashboard.js"></script>
+    <script type="text/javascript">
+        function preloader() {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+    </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="/stylesheets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/css/animate.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/css/style.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css'>
+    <!-- IE8 support for HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!--AngularJS Libraries-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+</head>
+
+<body ng-app="ehrApp" ng-controller="HospSummary" id="page-top" class="index" data-spy="scroll"
+      data-target=".navbar-fixed-top">
+<div id="loading"></div>
+
+<div id="content">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" href="#page-top">Clinix</a>-->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav  navbar-left">
+                    <li>
+                        <a class="page-scroll"  href="/"><span class="glyphicon glyphicon-home"></span><b>Sanjeevni - EHR</b></a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+<div class="spacer" style="margin-top:50px"></div>
+<div class="col-md-12" >
+    <div id="main">
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <div class="container dynamicTile" style="margin-left: 120px">
+            <div class="row " >
+                <div class="col-sm-2 col-xs-4">
+                    <div id="tile1" class="tile">
+                        <div class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" >
+                                <div class="item active" >
+                                    <img src="/images/readmission.png"
+                                         class="img-responsive" onclick="displayReadmission()"/>
+                                    <h6 style="text-align: center;">
+                                        Patient Readmissions
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-4">
+                    <div id="tile2" class="tile">
+                        <div class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="/images/patientDiagnosis.png" onclick="displayOverallPatientDiag()"
+                                         class="img-responsive"/>
+                                    <h6 style="text-align: center;">
+                                        Summary of Patient Diagnosis
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-4">
+                    <div id="tile3" class="tile">
+                        <div class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="/images/patientdoc_heirarchy.png" onclick="displayDocPatientHier()"
+                                         class="img-responsive"/>
+                                    <h6 style="text-align: center;">
+                                        Doctor and Patient Hierarchy
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="containerB" style="display: none;border-style: groove;">
+            <!--<div id="containerA" style="min-width: 813px; height: 400px; margin: 0 auto; display: none"></div>-->
+            <div class="container-fluid">
+                    <p><h4 style=" text-align: center">Overall Patient diagnosis</h4></p>
+                <div class = col-md-12" >
+                    <div class="row1" >
+                    <div class="col-md-6">
+                        <div class=" row1">
+                            <div  id="bubblechart"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class=" row">
+                    <div id="donutchart" ></div>
+                        </div>
+                    </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="containerA"  style="display: none;  margin-left: 7px; ">
+                <div class="col-md-12" style="display: block;border-style: groove;">
+                    <div class=" row1" >
+                        <h4 style="text-align: center">Patient Readmission Rates</h4>
+                        <div class="col-sm-4" style="margin-left: 25px;">
+                            <div class="row1">
+                                <table>
+                                    <thead><b>Patient Readmission Rates</b>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th>Readmissions</th>
+                                        <td>312</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Admissions</th>
+                                        <td>2301</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" >
+                            <div class="row1">
+                                <br><br>
+                                <div id="container-adm" style="width: 300px; height: 200px; float: left"></div>
+                                <div id="container-readm" style="width: 300px; height: 200px; float: left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<div class=" col-md-12" style="display: block;border-style: groove;">
+    <div class=" row1">
+        <div class="col-sm-4" style="margin-left: 25px;">
+            <div class="row1">
+                <div id="sparklinechart"></div>
+
+                <table id="table-sparkline">
+                    <thead>
+                    <tr>
+                        <b>7 Day Admit Accuity</b>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody-sparkline">
+                    <tr>
+                        <th>Emergency</th>
+                        <td>366</td>
+                        <td data-sparkline="21, 64, 57, 72,52,73,27 "/>
+                    </tr>
+                    <tr>
+                        <th>New Born</th>
+                        <td>87</td>
+                        <td data-sparkline="8, 16, 17, 9,7,11,17 "/>
+                    </tr>
+                    <tr>
+                        <th>Urgent</th>
+                        <td>151</td>
+                        <td data-sparkline="21, 29, 11, 7,13,25,25 "/>
+                    </tr>
+                    <tr>
+                        <th>Trauma</th>
+                        <td>6</td>
+                        <td data-sparkline="1, 2, 2, 1 "/>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-6" >
+            <div class="row1">
+                <div id="halfdonut" style="width: 510px; height: 400px; float: left;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="col-md-12" style="display: block;border-style: groove;">
+                <div class="row1">
+                    <div id="barchart_gender"  style="height:50%;width:80%"></div>
+                </div>
+
+                    </div>
+                </div>
+            <div class="row" id="containerC" style="display: none;border-style: groove; margin-left: 7px;margin-right: 15px">
+                    <p><h4 style=" text-align: center">Hospital Dendogram</h4></p>
+                    <div class = col-md-12" >
+                                <div class=" row1">
+                                    <div  id="allpatient" style="height:50%;width:80%"></div>
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+    </div>
+
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+<script>
+    //d3js bubble chart
+    var r = 740,
+            format = d3.format(",d"),
+            fill = d3.scale.category20c();
+
+    var bubble = d3.layout.pack()
+            .sort(null)
+            .size([r, r])
+            .padding(1.5);
+
+    var vis = d3.select("#bubblechart").append("svg")
+            .attr("width", r)
+            .attr("height", r)
+            .attr("class", "bubble");
+
+
+    var node = vis.selectAll("g.node")
+            .data(bubble.nodes(classes(json1))
+                    .filter(function(d) { return !d.children; }))
+            .enter().append("g")
+            .attr("class", "node")
+            .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+    node.append("title")
+            .text(function(d) { return d.className + ": " + format(d.value); });
+
+    node.append("circle")
+            .attr("r", function(d) { return d.r; })
+            .style("fill", function(d) { return fill(d.packageName); });
+
+    node.append("text")
+            .attr("text-anchor", "middle")
+            .attr("dy", ".1em")
+            .text(function(d) { return d.className.substring(0, d.r / 3); });
+
+    // Returns a flattened hierarchy containing all leaf nodes under the root.
+    function classes(root) {
+        var classes = [];
+
+        function recurse(name, node) {
+            if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
+            else classes.push({packageName: name, className: node.name, value: node.size});
+        }
+
+        recurse(null, root);
+        return {children: classes};
+    }
+
+    //hospital dendogram
+    var margin = {top: 20, right: 120, bottom: 20, left: 120},
+            width = 960 - margin.right - margin.left,
+            height = 800 - margin.top - margin.bottom;
+
+    var i = 0,
+            duration = 750,
+            root;
+
+    var tree = d3.layout.tree()
+            .size([height, width]);
+
+    var diagonal = d3.svg.diagonal()
+            .projection(function(d) { return [d.y, d.x]; });
+
+    var svg = d3.select("#allpatient").append("svg")
+            .attr("width", width + margin.right + margin.left)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    d3.json("/d3/all_patients.json", function(error, flare) {
+        if (error) throw error;
+
+        root = flare;
+        root.x0 = height / 2;
+        root.y0 = 0;
+
+        function collapse(d) {
+            if (d.children) {
+                d._children = d.children;
+                d._children.forEach(collapse);
+                d.children = null;
+            }
+        }
+
+        root.children.forEach(collapse);
+        update(root);
+    });
+
+    d3.select(self.frameElement).style("height", "800px");
+
+    function update(source) {
+
+        // Compute the new tree layout.
+        var nodes = tree.nodes(root).reverse(),
+                links = tree.links(nodes);
+
+        // Normalize for fixed-depth.
+        nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+        // Update the nodes…
+        var node = svg.selectAll("g.node")
+                .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+        // Enter any new nodes at the parent's previous position.
+        var nodeEnter = node.enter().append("g")
+                .attr("class", "node")
+                .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+                .on("click", click);
+
+        nodeEnter.append("circle")
+                .attr("r", 1e-6)
+                .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+        nodeEnter.append("text")
+                .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+                .attr("dy", ".35em")
+                .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+                .text(function(d) { return d.name; })
+                .style("fill-opacity", 1e-6);
+
+        // Transition nodes to their new position.
+        var nodeUpdate = node.transition()
+                .duration(duration)
+                .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+        nodeUpdate.select("circle")
+                .attr("r", 4.5)
+                .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+        nodeUpdate.select("text")
+                .style("fill-opacity", 1);
+
+        // Transition exiting nodes to the parent's new position.
+        var nodeExit = node.exit().transition()
+                .duration(duration)
+                .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+                .remove();
+
+        nodeExit.select("circle")
+                .attr("r", 1e-6);
+
+        nodeExit.select("text")
+                .style("fill-opacity", 1e-6);
+
+        // Update the links…
+        var link = svg.selectAll("path.link")
+                .data(links, function(d) { return d.target.id; });
+
+        // Enter any new links at the parent's previous position.
+        link.enter().insert("path", "g")
+                .attr("class", "link")
+                .attr("d", function(d) {
+                    var o = {x: source.x0, y: source.y0};
+                    return diagonal({source: o, target: o});
+                });
+
+        // Transition links to their new position.
+        link.transition()
+                .duration(duration)
+                .attr("d", diagonal);
+
+        // Transition exiting nodes to the parent's new position.
+        link.exit().transition()
+                .duration(duration)
+                .attr("d", function(d) {
+                    var o = {x: source.x, y: source.y};
+                    return diagonal({source: o, target: o});
+                })
+                .remove();
+
+        // Stash the old positions for transition.
+        nodes.forEach(function(d) {
+            d.x0 = d.x;
+            d.y0 = d.y;
+        });
+    }
+
+    // Toggle children on click.
+    function click(d) {
+        if (d.children) {
+            d._children = d.children;
+            d.children = null;
+        } else {
+            d.children = d._children;
+            d._children = null;
+        }
+        update(d);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+{
+  "name": "flare",
+  "children": [
+    {
+      "name": "analytics",
+      "children": [
+        {
+          "name": "heartdisease",
+          "children": [
+            {"name": "Rheumatic heart disease", "size": 5},
+            {"name": "Hypertensive heart disease", "size": 3},
+            {"name": "Heart attack", "size": 7},
+            {"name": "Congenital heart disease", "size": 2}
+          ]
+        },
+        {
+          "name": "Diabetics",
+          "children": [
+            {"name": "Type 1 diabetes", "size": 10},
+            {"name": "Type 2 diabetes", "size": 20},
+            {"name":"Gestational diabetes","size":7},
+            {"name":"Kidney Disease","size":7},
+            {"name":"HHS","size":2}
+          ]
+        },
+        {
+          "name": "Arthritis",
+          "children": [
+            {"name": "Arthritis", "size": 15},
+            {"name": "Osteoarthritis", "size": 8},
+            {"name":"Child   Arthritis","size":4}
+          ]
+        },
+        {
+          "name": "Asthma",
+          "children": [
+            {"name": "Asthma", "size": 3}
+          ]
+        },
+        {
+          "name": "Cancer",
+          "children": [
+            {"name": "Cervical cancer", "size": 8},
+            {"name": "Liver cancer", "size": 3},
+            {"name":"Prostate cancer","size":2},
+            {"name": "Skin cancer", "size": 1},
+            {"name":"Breast cancer","size":7}
+
+          ]
+        },
+        {
+          "name": "Influenza",
+          "children": [
+            {"name": "Seasonal Influenza", "size": 3},
+            {"name": "Swine Influenza ", "size": 6},
+            {"name":"Pandemic Influenza","size":5}
+          ]
+        },
+        {
+          "name": "Water diseases",
+          "children": [
+            {"name": "Typhoid Fever", "size": 8},
+            {"name": "Pontiac Fever", "size": 3},
+            {"name":"Diarrhea ","size":5},
+            {"name": "Leptospirosis", "size": 1},
+            {"name": "Malaria", "size": 6},
+            {"name": "Hepatitis A ", "size": 6}
+
+          ]
+        },
+        {
+          "name": "Viral Hepatitis",
+          "children": [
+            {"name": "Hepatitis A", "size": 6},
+            {"name": "Hepatitis B", "size": 3},
+            {"name":"Hep C ","size":1},
+            {"name": "Hep D", "size": 1},
+            {"name": "Hep E", "size": 4}
+
+          ]
+        }
+
+      ]
+    }
+  ]
+}

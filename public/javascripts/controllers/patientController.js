@@ -6,11 +6,6 @@
 
     $http.get('http://localhost:3000/patients').success(function (res) {
 
-        //for (var i = 0; i < res.length; i++) {
-        //    $scope.plist.push(res[i].user_firstname);
-        //}
-        //console.log($scope.plist);
-
         $scope.currentPage = 0;
         $scope.pageSize = 3;
         $scope.plist = [];
