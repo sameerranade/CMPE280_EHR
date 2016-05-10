@@ -193,7 +193,11 @@
                     <br>
                     <br>
                     <br>
-                    <button type="button" class="btn btn-primary" style="margin-left: -170px;">View Patient Details</button>
+                    <form action="/patient_details">
+                        <button type="submit" class="btn btn-primary"
+                                style="margin-left: -170px;">View Patient Details
+                        </button>
+                    </form>
                     <!--<div class="form-group">-->
                     <!--<h4><label class="col-xs-6 col-md-2 control-label">Blood Group</label></h4>-->
 
@@ -269,9 +273,9 @@
 <script src="/javascripts/jquery.knob.js"></script>
 <script src="/javascripts/countUp.min.js"></script>
 <script src="/javascripts/bootstrap-list-filter.src.js"></script>
-<!--<script>-->
-<!--$('#searchlist').btsListFilter('#searchinput', {});-->
-<!--</script>-->
+<script>
+    $('#searchlist').btsListFilter('#searchinput', {});
+</script>
 
 
 </body>
