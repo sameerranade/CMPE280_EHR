@@ -1,0 +1,384 @@
+<html><head>
+
+  <link rel="stylesheet" href="/stylesheets/css/patient_details.css" type="text/css">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<style type="text/css">
+  .node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+.node {
+  font: 10px sans-serif;
+}
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+h1{
+  text-align: center;
+  color: #005A98;
+}
+</style>
+
+  <title>Doctor Summary Details</title>
+
+<script type="text/javascript">
+$(function () {
+    // Age categories
+    var categories = ['0-4', '5-9', '10-14', '15-19',
+            '20-24', '25-29', '30-34', '35-39', '40-44',
+            '45-49', '50-54', '55-59', '60-64', '65-69',
+            '70-74', '75-79', '80-84', '85-89', '90-94',
+            '95-99', '100 + '];
+    $(document).ready(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Population of the patients under Doctor'
+            },
+            xAxis: [{
+                categories: categories,
+                reversed: false,
+                labels: {
+                    step: 1
+                }
+            }, { // mirror axis on right side
+                opposite: true,
+                reversed: false,
+                categories: categories,
+                linkedTo: 0,
+                labels: {
+                    step: 1
+                }
+            }],
+            yAxis: {
+                title: {
+                    text: null
+                },
+                labels: {
+                    formatter: function () {
+                        return Math.abs(this.value) + '%';
+                    }
+                }
+            },
+
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + ', age ' + this.point.category ;
+                }
+            },
+
+            series: [{
+                name: 'Male',
+                data: [-2.2, -2.2, -2.3, -2.5, -2.7, -3.1, -3.2,
+                     -0.2, -0.0, -0.0]
+            }, {
+                name: 'Female',
+                data: [2.1, 2.0, 2.2, 2.4, 2.6, 3.0, 3.1, 2.9,
+                     1.2, 0.6, 0.1, 0.0]
+            }]
+        });
+    });
+
+});
+</script>
+
+<script type="text/javascript">
+window.onload=function(){
+var radius = 960 / 2;
+
+var cluster = d3.layout.cluster()
+    .size([360, radius - 120]);
+
+var diagonal = d3.svg.diagonal.radial()
+    .projection(function (d) {
+    return [d.y, d.x / 180 * Math.PI];
+});
+
+var svg = d3.select("#cluster_chart").append("svg")
+    .attr("width", radius * 2)
+    .attr("height", radius * 2)
+    .append("g")
+    .attr("transform", "translate(" + radius + "," + radius + ")");
+var data = {
+    "name": "diseases",
+        "children": [{
+        "name": "Common Cold",
+            "children": [{
+            "name": "Scratchy or sore throat",
+            }, {
+            "name": "Sneezing",
+            }, {
+            "name": "Mucus draining from your nose into your throat",
+        }]
+    }, {
+        "name": "Anemia"
+    }, {
+        "name": "Hepatitis B",
+            "children": [{
+            "name": "Abdominal pain",
+                "size": 1759
+        }, {
+            "name": "Fever",
+                "size": 2165
+        }, {
+            "name": "Joint pain",
+                "size": 586
+        }, {
+            "name": "Weakness and fatigue",
+                "size": 3331
+        }, {
+            "name": "Yellowing of your skin and the whites of your eyes (jaundice)",
+                "size": 772
+        }]
+    }, {
+        "name": "Lung Cancer",
+            "children": [{
+            "name": "Coughing up blood or rust-colored sputum (spit or phlegm)",
+                "size": 8833
+        }, {
+            "name": "Weight loss and loss of appetite",
+                "size": 1732
+        }, {
+            "name": "Infections such as bronchitis and pneumonia that don’t go away or keep coming back",
+                "size": 3623
+        }, {
+            "name": "Shortness of breath",
+                "size": 10066
+        }]
+    }, {
+        "name": "Diarrhea   ",
+            "children": [{
+            "name": "Signs of dehydration",
+                "size": 4116
+        }]
+    }, {
+        "name": "Strep Throat",
+            "children": [{
+            "name": "Painful swallowing",
+                "size": 1124
+        }, {
+            "name": "Swollen, tender lymph nodes in your neck",
+                "size": 1876
+        }, {
+            "name": "Headache",
+                "size": 1101
+        }]
+    }, {
+        "name": "Heart Disease",
+            "children": [{
+            "name": "A faster heartbeat",
+                "size": 2105
+        }, {
+            "name": "Shortness of breath",
+                "size": 1316
+        }, {
+            "name": "Nausea",
+                "size": 3151
+        }, {
+            "name": "Sweating",
+                "size": 3770
+        }]
+    }, {
+        "name": "Sexually Transmitted Diseases",
+            "children": [{
+            "name": "Fever and flu-like symptoms",
+                "size": 5559
+        }, {
+            "name": "Swollen lymph nodes",
+                "size": 19118
+        }, {
+            "name": "Genital itching, burning, or discomfort",
+                "size": 6887
+        }]
+    }, {
+        "name": "Type 2 Diabetes",
+            "children": [{
+            "name": "Increased thirst and frequent urination"
+        }, {
+            "name": "Blurred vision"
+        }, {
+            "name": "Increased hunger",
+        }, {
+            "name": "Weight loss",
+                "size": 16540
+        }]
+    }]
+};
+
+function update(root) {
+    var nodes = cluster.nodes(root);
+    svg.selectAll("path.link").remove();
+    svg.selectAll("g.node").remove();
+    var link = svg.selectAll("path.link")
+        .data(cluster.links(nodes))
+        .enter().append("path")
+        .attr("class", "link")
+        .attr("d", diagonal);
+
+    var node = svg.selectAll("g.node")
+        .data(nodes)
+        .enter().append("g")
+        .attr("class", "node")
+        .attr("transform", function (d) {
+        return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
+    })
+
+    node.append("circle")
+        .attr("r", 4.5).style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; }).on("click", click);
+
+    node.append("text")
+        .attr("dy", ".31em")
+        .attr("text-anchor", function (d) {
+        return d.x < 180 ? "start" : "end";
+    })
+        .attr("transform", function (d) {
+        return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)";
+    })
+        .text(function (d) {
+        return d.name;
+    });
+}
+update(data);
+
+function collapse(d) {
+    if (d.children) {
+        d._children = d.children;
+        d._children.forEach(collapse);
+        d.children = null;
+    }
+}
+
+data.children.forEach(collapse);
+update(data);
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+  update(data);
+}
+}
+</script>
+
+</head>
+
+<body>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div class="col-md-4 col-xs-12">
+    <div class="nav-side-menu">
+        <div class="brand"><a>Sanjeevani Hospitals</a></div>
+        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+        <div class="menu-list">
+
+            <ul id="menu-content" class="menu-content collapse out">
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-dashboard fa-lg"></i> Doctor Summary
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-lg"></i> Name: Dr. Jason Bourne
+                    </a>
+                </li>
+                </a>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-lg"></i> Age: 48
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-lg"></i> Specialization: Cardiology
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-users fa-lg"></i> Phone: 669-888-6221
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-lg"></i> Address: Washington Square, San Jose
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-8 col-xs-12">
+    <div class="collapse navbar-collapse navbar-left" id="example-navbar">
+        <ul class="nav navbar-nav">
+            <li><a> <span class="glyphicon glyphicon-grain"> </span> <button id="hide">Hide</button></a></li>
+            <li><a> <span class="glyphicon glyphicon-heart-empty"> </span> <button id="show_cluster">Diseases Cluster</button></a>
+            </li>
+            <li><a> <span class="glyphicon glyphicon-folder-open"> </span> <button id="show_age">Patient Age Details</button></a>
+            </li>
+            <li><a> <span class="glyphicon glyphicon-tint"> </span> Medications</a></li>
+            <li><a> <span class="glyphicon glyphicon-ok-sign"> </span> Vaccination &
+                Immunizations</a></li>
+        </ul>
+    </div>
+
+<div class="row">
+  <div class="age_chart">
+      <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+    </div>
+
+    <div class="cluster_chart" id="cluster_chart">
+    </div>
+
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $(".age_chart").hide();
+    });
+    $("#show_age").click(function(){
+        $(".age_chart").show();
+    });
+});
+</script>
+
+</body></html>
