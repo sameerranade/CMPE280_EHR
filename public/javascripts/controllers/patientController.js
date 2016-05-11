@@ -14,7 +14,7 @@
             return Math.ceil($scope.plist.length / $scope.pageSize);
         }
         for (var i = 0; i < 5; i++) {
-            $scope.plist.push(res[i].user_Name);
+            $scope.plist.push(res[i].user_firstname);
         }
 
     });

@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     host: 'cmpe280.chowxkprohlg.us-west-1.rds.amazonaws.com',
     user: 'ciphers',
     password: 'ciphers280',
-    database: 'SANJEEVANI',
+    database: 'EHR',
     port : '3306'
 });
 
@@ -101,7 +101,7 @@ router.get('/patients/:pName', function (req, res, data) {
             throw err;
         }
         else {
-            connection.query('SELECT * from profile where uer_id = ?', rows[0].uer_id, function (err, rows2, fields) {
+            connection.query('SELECT * from Profile where uer_id = ?', rows[0].uer_id, function (err, rows2, fields) {
                 if (err) {
                     throw err;
                 }
