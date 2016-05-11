@@ -79,7 +79,20 @@ router.get('/patients', function (req, res, next) {
     });
 
 });
+router.get('/appointments', function (req, res, next) {
 
+
+    connection.query('SELECT * from Appointments', function (err, rows, fields) {
+        if (err) {
+            throw err;
+        }
+        else {
+            res.json(rows);
+        }
+        console.log('The solution is: ', rows);
+    });
+
+});
 router.get('/patients/:pName', function (req, res, data) {
     var patientName = req.params.pName;
 

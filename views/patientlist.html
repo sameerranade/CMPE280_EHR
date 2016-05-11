@@ -25,6 +25,8 @@
     <link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
     <!-- IE8 support for HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -36,20 +38,10 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 
-    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
-    <!--<script>-->
-    <!--//        $(document).ready(function() {-->
-    <!--//            var box = $("#patientDiv");-->
-    <!--//            var webox = $("#welcomeDiv");-->
-    <!--$("#toggleButton").click(function(){-->
-    <!--alert("button");-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-    <!--//                box.show();-->
-    <!--//                webox.hide();-->
-    <!--});-->
-    <!--//        });//]]>-->
 
-    <!--</script>-->
 
 </head>
 
@@ -59,7 +51,11 @@
 
 <div id="content">
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center" style="font-family:Titillium Web,Helvetica Neue,sans-serif;">
+        <div id="name" style="float: left;">
+            <i class="fa fa-heartbeat" style="font-size:50px;color:Red; padding: 2px;"></i>
+            <h1 style="color: white; margin-left: 15px;">Sanjeevani</h1>
+        </div>
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -77,25 +73,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="page-scroll">
-                        <a href="#page-top"><i class="fa fa-home fa-lg"></i> Home</a>
-                    </li>
-
-                    <li class="page-scroll">
-                        <a href="#about"><i class="fa fa-users fa-lg"></i> About Us</a>
-                    </li>
-
-
-                    <li class="page-scroll">
-                        <a href="#services"><i class="fa fa-cogs fa-lg"></i> Services</a>
-                    </li>
-
-
-                    <li class="page-scroll">
-                        <a href="/login"><i class="fa fa-sign-in"></i> Signin</a>
-                    </li>
-
-                    <li class="page-scroll">
-                        <a href="#signup"><span class="glyphicon glyphicon-plus-sign"></span> Signup</a>
+                        <a href="/landingpage.html"><i class="glyphicon glyphicon-log-out"></i> Logout</a>
                     </li>
 
                 </ul>
@@ -108,7 +86,7 @@
     <header class="home">
         <div class="home_wrap">
             <div class="row">
-                <div class="col-xs-12 col-md-4" style="height: 550px;">
+                <div class="col-xs-12 col-md-4" style="height: 550px;"  >
                     <div class="form-group">
                         <div class="row">
                             <h3 class="col-xs-12 col-md-6">Patient List</h3><br><br>
@@ -122,8 +100,7 @@
                             <div id="searchlist" class="col-xs-12 col-md-6 list-group"
                                  ng-repeat="patient in plist | startFrom:currentPage*pageSize | limitTo:pageSize">
 
-                                <a class="col-xs-12 col-md-6 list-group-item" id="toggleButton"
-                                   style="text-align: left; width:355px;color:#005A98;"
+                                <a class="col-xs-12 col-md-6 list-group-item toggleButton" style="text-align: left; width:355px;color:#005A98;"
                                    ng-click="getPatientDetails(patient)">{{patient}}</a>
 
                             </div>
@@ -142,86 +119,83 @@
                         </div>
                     </div>
                 </div>
-                <!--<div class="col-xs-12 col-md-4" style="height: 550px;" id="welcomeDiv">-->
-                <!--<div class="form-group">-->
-                <!--<div class="row">-->
-                <!--<h3 class="col-xs-12 col-md-8">Welcome Doctor!</h3>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <div class="col-xs-12 col-md-4" style="height: 550px;" id="patientDiv">
+                <div class="col-xs-12 col-md-4" style="height: 550px;" id="welcomeDiv">
                     <div class="form-group">
                         <div class="row">
+                            <h3 class="col-xs-12 col-md-8">Welcome Doctor!</h3>
+                            <br>
+                            <br>
+                            <img src="images/team/doc.jpg" style="width:291px; height: 272px;"
+                                 class="ratio img-responsive img-circle" alt="">
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-xs-12 col-md-4" style="height: 550px;" id="patientDiv">
+                    <div id="brdr">
+                    <div class="form-group">
+                        <div class="row">
+                            <button class="btn btn-danger" id="closeDiv">X</button>
                             <h3 class="col-xs-12 col-md-8">Patient Info</h3><br><br>
-
-                            <img src="images/gallery/photo_02.jpg" class="col-md-2 control-label" style="margin-left: 30px;height:100px; width:130px;padding-left: 0px;
-  padding-right: 0px;">
+                            <img src="images/gallery/photo_02.jpg" class="col-md-2 control-label"
+                                 style= "margin-left: 30px;height:100px; width:130px;padding-left: 0px;padding-right: 0px;" >
                             <label class="col-md-2 control-label">
-                                <h4 style="font-size: 20px;">
+                                <h4 style="font-family:Lato; font-weight: bold">
                                     {{pname}}
                                 </h4>
                             </label>
-
                         </div>
+
                     </div>
                     <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label">User ID</label></h4>
-                        <h4><label id="lblid" class="col-xs-6 col-md-4 control-label">{{uid}}</label></h4>
+                        <h4 ><label class="col-xs-6 col-md-4 control-label">User ID</label></h4>
+                        <h4><label id="lblid" class="col-xs-6 col-md-4 control-label" >{{uid}}</label></h4>
                     </div>
                     <br>
                     <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label">Height</label></h4>
-                        <h4><label id="lblheight" class="col-xs-6 col-md-4 control-label">{{height}}</label></h4>
+                        <h4><label class="col-xs-6 col-md-4 control-label" >Height</label></h4>
+                        <h4><label id="lblheight" class="col-xs-6 col-md-4 control-label" >{{height}}</label></h4>
 
                     </div>
                     <br>
                     <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label">Weight</label></h4>
-                        <h4><label id="lblweight" class="col-xs-6 col-md-4 control-label">{{weight}}</label></h4>
+                        <h4><label class="col-xs-6 col-md-4 control-label" >Weight</label></h4>
+                        <h4 ><label id="lblweight" class="col-xs-6 col-md-4 control-label">{{weight}}</label></h4>
                     </div>
                     <br>
                     <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label">Address</label></h4>
-                        <h4><label id="lbladdress" class="col-xs-6 col-md-4 control-label">{{address}}</label></h4>
+                        <h4><label class="col-xs-6 col-md-4 control-label" >Address</label></h4>
+                        <h4><label id="lbladdress" class="col-xs-6 col-md-4 control-label" >{{address}}</label></h4>
                     </div>
                     <br>
                     <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label">Phone</label></h4>
+                        <h4><label class="col-xs-6 col-md-4 control-label" >Phone</label></h4>
 
-                        <h4><label id="lblphone" class="col-xs-6 col-md-4 control-label">{{phone}}</label></h4>
+                        <h4 ><label id="lblphone" class="col-xs-6 col-md-4 control-label" >{{phone}}</label></h4>
 
                     </div>
                     <br>
                     <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label">Emergency Phone</label></h4>
+                        <h4><label class="col-xs-6 col-md-4 control-label" >Emergency Phone</label></h4>
 
-                        <h4><label id="lblemercon" class="col-xs-6 col-md-4 control-label">{{emerphone}}</label>
+                        <h4><label id="lblemercon" class="col-xs-6 col-md-4 control-label" >{{emerphone}}</label>
                         </h4>
 
                     </div>
                     <br>
                     <br>
                     <br>
-                    <button type="button" class="btn btn-primary" style="margin-left: -170px;"
-                            onclick="location.href='/patient_details'">View Patient Details
-                    </button>
-
+                    <button type="button" class="btn btn-primary" style="margin-left: -170px;" onclick="location.href='/patient_details'">View Patient Details</button>
+                </div>
                 </div>
 
-                <div class="col-xs-12 col-md-4" style="height: 550px;">
+                <div class="col-xs-12 col-md-4" style="height: 550px;" id="appoint">
                     <div class="form-group">
                         <div class="row">
                             <h3 class="col-xs-12 col-md-8">Appointments</h3><br><br>
                             <img src="images/gallery/capture.png" class="col-md-2 control-label" class="img-responsive"
-                                 ng-click="getAppointments()" style="height:130px; width:150px; margin-left: 50px;">
+                                 ng-click="getAppointments()" style= "height:130px; width:150px; margin-left: 50px;">
                             <table ng-controller="patientController" class="table table-striped" style="color:#005A98">
-                                <thead>
-                                <tr>
-                                    <th>Patient Name</th>
-                                    <th>Appointment Date</th>
-                                    <th>Slot Time</th>
-                                </tr>
-                                </thead>
+                                <thead><tr><th>Patient Name</th><th>Appointment Date</th><th>Slot Time</th>< tr></thead>
 
                                 <tbody>
                                 <tr ng-repeat="appointment in applist">
@@ -234,9 +208,10 @@
 
                                 </tr>
 
-                                </tbody>
-                            </table>
+                                </tbody> </table>
                         </div>
+                        <img id="butpatient" src="images/gallery/patbutton.png" class="col-md-2 control-label"
+                             style= "margin-left: 30px;height:70px; width:150px;padding-left: 0px;padding-right: 0px;" >
                     </div>
                 </div>
 

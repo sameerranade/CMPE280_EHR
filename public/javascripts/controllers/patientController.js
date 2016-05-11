@@ -7,17 +7,16 @@
     $http.get('http://localhost:3000/patients').success(function (res) {
 
         $scope.currentPage = 0;
-        $scope.pageSize = 4;
+        $scope.pageSize = 3;
         $scope.plist = [];
         //$scope.data = [];
         $scope.numberOfPages = function () {
             return Math.ceil($scope.plist.length / $scope.pageSize);
         }
-        for (var i = 0; i <20; i++) {
-            if(res[i].user_Name != null) {
-                $scope.plist.push(res[i].user_Name);
-            }
+        for (var i = 0; i < 5; i++) {
+            $scope.plist.push(res[i].user_Name);
         }
+
     });
 
     $scope.getPatientDetails = function (pName) {
@@ -39,7 +38,25 @@
             $scope.languages = res[0].languagetype;
             $scope.bday = res[0].Birthday;
         });
+        $('#welcomeDiv').hide();
+        $('#patientDiv').show();
+
+        $("#closeDiv").click(function() {
+            $('#patientDiv').hide();
+            $('#welcomeDiv').show();
+            //$('#patientDiv').hide();
+        })
+
     }
+
+     $scope.getAppointments = function (pName) {
+         $scope.applist = [];
+         var url = 'http://localhost:3000/appointments/';
+         $http.get(url).success(function (res) {
+             console.log(res);
+             $scope.applist = res;
+         });
+     }
 }).filter('startFrom', function () {
     return function (input, start) {
         start = +start; //parse to int

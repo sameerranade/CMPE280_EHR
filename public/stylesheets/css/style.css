@@ -1472,12 +1472,13 @@ video {
     object-fit: cover;
     left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%);
 }
-/*#patientDiv{*/
-    /*position: absolute;*/
-    /*visibility: hidden;*/
-
-
-/*}*/
+#patientDiv{
+    display:none;
+    }
+#brdr{
+    border: 1px solid steelblue;
+    box-shadow: 10px 10px 5px steelblue;
+}
 
 
 .sectionChart1{
