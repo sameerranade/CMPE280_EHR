@@ -41,7 +41,6 @@
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 
-
 </head>
 
 <body ng-app="ehrApp" ng-controller="patientController" id="page-top" class="index" data-spy="scroll"
@@ -51,14 +50,16 @@
 <div id="content">
     <!-- Navigation -->
 
-    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center" style="font-family:Titillium Web,Helvetica Neue,sans-serif;">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center"
+         style="font-family:Titillium Web,Helvetica Neue,sans-serif;">
         <div id="name" style="float: left;">
             <i class="fa fa-heartbeat" style="font-size:50px;color:Red; padding: 2px;"></i>
             <h1 style="color: white; margin-left: 15px;">CMPE 280 Sanjeevani</h1>
 
         </div>
         <div style="color: white; float: right; margin: 40px;">
-            <a href="/" style="color: #005A98; float: right;"><i class="glyphicon glyphicon-log-out" style="color: #005A98; float: right;"></i>Logout</a>
+            <a href="/" style="color: #005A98; float: right;"><i class="glyphicon glyphicon-log-out"
+                                                                 style="color: #005A98; float: right;"></i>Logout</a>
         </div>
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -76,10 +77,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <!--<ul class="nav navbar-nav">-->
-                    <!--<li class="page-scroll">-->
+                <!--<li class="page-scroll">-->
 
 
-                    <!--</li>-->
+                <!--</li>-->
 
                 <!--</ul>-->
             </div>
@@ -91,8 +92,9 @@
     <header class="home">
         <div class="home_wrap">
             <div class="row">
-                <div class="col-xs-12 col-md-4" style="height: 550px;"  >
+                <div class="col-xs-12 col-md-4" style="height: 550px;">
                     <div class="form-group">
+                        <br>
                         <div class="row">
                             <h3 class="col-xs-12 col-md-6">Patient List</h3><br><br>
                             <div class="col-xs-12 col-md-6">
@@ -105,11 +107,11 @@
                             <div id="searchlist" class="col-xs-12 col-md-6 list-group"
                                  ng-repeat="patient in plist | startFrom:currentPage*pageSize | limitTo:pageSize">
 
-                                <a class="col-xs-12 col-md-6 list-group-item toggleButton" style="text-align: left; width:355px;color:#005A98;"
+                                <a class="col-xs-12 col-md-6 list-group-item toggleButton"
+                                   style="text-align: left; width:355px;color:#005A98;"
                                    ng-click="getPatientDetails(patient)">{{patient}}</a>
 
                             </div>
-
                         </div>
                         <div class="row">
                             <button class="btn btn-primary" ng-disabled="currentPage == 0"
@@ -126,81 +128,91 @@
                 </div>
                 <div class="col-xs-12 col-md-4" style="height: 550px;" id="welcomeDiv">
                     <div class="form-group">
+                        <br>
                         <div class="row">
                             <h3 class="col-xs-12 col-md-8">Welcome Doctor!</h3>
                             <br>
                             <br>
                             <img src="images/team/doc.jpg" style="width:291px; height: 272px;"
                                  class="ratio img-responsive img-circle" alt="">
-                            </div>
                         </div>
                     </div>
+                </div>
                 <div class="col-xs-12 col-md-4" style="height: 550px;" id="patientDiv">
                     <div id="brdr">
-                    <div class="form-group">
-                        <div class="row">
-                            <button class="btn btn-danger" id="closeDiv">X</button>
-                            <h3 class="col-xs-12 col-md-8">Patient Info</h3><br><br>
-                            <img src="images/gallery/photo_02.jpg" class="col-md-2 control-label"
-                                 style= "margin-left: 30px;height:100px; width:130px;padding-left: 0px;padding-right: 0px;" >
-                            <label class="col-md-2 control-label">
-                                <h4 style="font-family:Lato; font-weight: bold">
-                                    {{pname}}
-                                </h4>
-                            </label>
+                        <div class="form-group">
+                            <div class="row">
+                                <button class="btn btn-danger" id="closeDiv">X</button>
+                                <h3 class="col-xs-12 col-md-8">Patient Info</h3><br><br>
+                                <img src="images/gallery/photo_02.jpg" class="col-md-2 control-label"
+                                     style="margin-left: 30px;height:100px; width:130px;padding-left: 0px;padding-right: 0px;">
+                                <label class="col-md-2 control-label">
+                                    <h4 style="font-family:Lato; font-weight: bold">
+                                        {{pname}}
+                                    </h4>
+                                </label>
+                            </div>
+
                         </div>
+                        <div class="form-group">
+                            <h4><label class="col-xs-6 col-md-4 control-label">User ID</label></h4>
+                            <h4><label id="lblid" class="col-xs-6 col-md-4 control-label">{{uid}}</label></h4>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <h4><label class="col-xs-6 col-md-4 control-label">Height</label></h4>
+                            <h4><label id="lblheight" class="col-xs-6 col-md-4 control-label">{{height}}</label></h4>
 
-                    </div>
-                    <div class="form-group">
-                        <h4 ><label class="col-xs-6 col-md-4 control-label">User ID</label></h4>
-                        <h4><label id="lblid" class="col-xs-6 col-md-4 control-label" >{{uid}}</label></h4>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label" >Height</label></h4>
-                        <h4><label id="lblheight" class="col-xs-6 col-md-4 control-label" >{{height}}</label></h4>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <h4><label class="col-xs-6 col-md-4 control-label">Weight</label></h4>
+                            <h4><label id="lblweight" class="col-xs-6 col-md-4 control-label">{{weight}}</label></h4>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <h4><label class="col-xs-6 col-md-4 control-label">Address</label></h4>
+                            <h4><label id="lbladdress" class="col-xs-6 col-md-4 control-label">{{address}}</label></h4>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <h4><label class="col-xs-6 col-md-4 control-label">Phone</label></h4>
 
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label" >Weight</label></h4>
-                        <h4 ><label id="lblweight" class="col-xs-6 col-md-4 control-label">{{weight}}</label></h4>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label" >Address</label></h4>
-                        <h4><label id="lbladdress" class="col-xs-6 col-md-4 control-label" >{{address}}</label></h4>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label" >Phone</label></h4>
+                            <h4><label id="lblphone" class="col-xs-6 col-md-4 control-label">{{phone}}</label></h4>
 
-                        <h4 ><label id="lblphone" class="col-xs-6 col-md-4 control-label" >{{phone}}</label></h4>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <h4><label class="col-xs-6 col-md-4 control-label">Emergency Phone</label></h4>
 
+                            <h4><label id="lblemercon" class="col-xs-6 col-md-4 control-label">{{emerphone}}</label>
+                            </h4>
+
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-primary" style="margin-left: -170px;"
+                                onclick="location.href='/patient_details'">View Patient Details
+                        </button>
                     </div>
-                    <br>
-                    <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label" >Emergency Phone</label></h4>
-
-                        <h4><label id="lblemercon" class="col-xs-6 col-md-4 control-label" >{{emerphone}}</label>
-                        </h4>
-
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <button type="button" class="btn btn-primary" style="margin-left: -170px;" onclick="location.href='/patient_details'">View Patient Details</button>
-                </div>
                 </div>
 
                 <div class="col-xs-12 col-md-4" style="height: 550px;" id="appoint">
                     <div class="form-group">
+                        <br>
                         <div class="row">
                             <h3 class="col-xs-12 col-md-8">Appointments</h3><br><br>
                             <img src="images/gallery/capture.png" class="col-md-2 control-label" class="img-responsive"
-                                 ng-click="getAppointments()" style= "height:130px; width:150px; margin-left: 50px;">
+                                 ng-click="getAppointments()" style="height:130px; width:150px; margin-left: 50px;">
                             <table ng-controller="patientController" class="table table-striped" style="color:#005A98">
-                                <thead><tr><th>Patient Name</th><th>Appointment Date</th><th>Slot Time</th>< tr></thead>
+                                <thead>
+                                <tr>
+                                    <th>Patient Name</th>
+                                    <th>Appointment Date</th>
+                                    <th>Slot Time</th>
+                                </tr>
+                                </thead>
 
                                 <tbody>
                                 <tr ng-repeat="appointment in applist">
@@ -213,12 +225,17 @@
 
                                 </tr>
 
-                                </tbody> </table>
+                                </tbody>
+                            </table>
                         </div>
-                        <button id="butpatient" class="btn btn-primary" ng-disabled="currentPage >= data.length/pageSize - 1"
-                        onclick="window.location.href='/doctorSummary'" style="margin-right: 100px;">
-                            See Patients Under Me
-                        </button>
+                        <div class="row">
+                            <button id="butpatient" class="btn btn-primary"
+                                    ng-disabled="currentPage >= data.length/pageSize - 1"
+                                    onclick="window.location.href='/doctorSummary'"
+                                    style="margin-right: 100px; margin-bottom: 50px;">
+                                See Patients Under Me
+                            </button>
+                        </div>
                     </div>
                 </div>
 

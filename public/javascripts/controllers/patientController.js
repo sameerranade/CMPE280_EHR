@@ -7,7 +7,7 @@ ehrApp.controller('patientController', function ($scope, $http) {
     $http.get('http://localhost:3000/patients').success(function (res) {
 
         $scope.currentPage = 0;
-        $scope.pageSize = 4;
+        $scope.pageSize = 3;
         $scope.plist = [];
         //$scope.data = [];
         $scope.numberOfPages = function () {
