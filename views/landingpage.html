@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="">
@@ -22,9 +21,9 @@
     <link href="/stylesheets/css/style.css" rel="stylesheet" type="text/css">
 
     <!-- Fonts -->
-    <link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- IE8 support for HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,11 +34,18 @@
 
 <body id="page-top" class="index" data-spy="scroll" data-target=".navbar-fixed-top">
 
+
 <div id="loading"></div>
 
 <div id="content">
+
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center" style="font-family:Titillium Web,Helvetica Neue,sans-serif;">
+        <div id="name" style="float: left;">
+            <i class="fa fa-heartbeat" style="font-size:50px;color:Red; padding: 5px;"></i>
+            <h1 style="color: white; margin-left: 15px;">Sanjeevani</h1>
+        </div>
+
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -54,6 +60,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
                 <ul class="nav navbar-nav">
                     <li class="page-scroll">
                         <a href="#page-top"><i class="fa fa-home fa-lg"></i>Home</a>
@@ -82,6 +89,7 @@
                     </li>
 
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -188,97 +196,115 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 left-services">
-                        <div class="service-item animateleft">
-							<span class="fa-stack fa-3x right">
-							    <i class="fa fa-circle fa-2x fa-stack-2x"></i>
-							    <i class="fa fa-user-md fa-stack-1x fa-inverse service-icon"></i>
-							</span>
-                            <h3>
-                                Maintain your Professional Profile
-                            </h3>
-                            <p class="white">
-                            </p>
-                        </div>
-
-                        <div class="service-item animateleft">
-							<span class="fa-stack fa-3x right">
-							    <i class="fa fa-circle fa-2x fa-stack-2x"></i>
-							    <i class="fa fa-paperclip fa-stack-1x fa-inverse service-icon"></i>
-							</span>
-                            <h3>
-                                View patient's reports and medical history
-                            </h3>
-
-                        </div>
-                    </div>
-                    <div class="col-md-6 right-services">
-                        <div class="service-item animateright">
-							<span class="fa-stack fa-3x right">
-							    <i class="fa fa-circle fa-2x fa-stack-2x"></i>
-							    <i class="fa fa-hospital-o fa-stack-1x fa-inverse service-icon"></i>
-							</span>
-                            <h3>
-                                Provide online subscriptions
-                            </h3>
-
-                        </div>
-                        <div class="service-item animateright">
-							<span class="fa-stack fa-3x right">
-							    <i class="fa fa-circle fa-2x fa-stack-2x"></i>
-							    <i class="fa fa-stethoscope fa-stack-1x fa-inverse service-icon"></i>
-							</span>
-                            <h3>
-                                Virtual EXAMINATION
-                            </h3>
-                            <p class="white">
-                            </p>
+            </div>
+            <div class="row">
+                <div class="col-md-2" style="margin-left: 140px;">
+                    <div id="tile2" class="tile">
+                        <div class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="/images/prof_life.png" onclick="displayBWeightChart()"
+                                         class="img-responsive"/>
+                                    <h4 style="text-align: center;">
+                                        Maintain your Professional Profile
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+                <div class="col-md-2">
+                    <div id="tile2" class="tile">
+                        <div class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="/images/med_hist.png" style="width:204px; height: 161px;"onclick="displayBWeightChart()"
+                                         class="img-responsive"/>
+                                    <h4 style="text-align: center;">
+                                        View patient's reports and medical history
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
 
-    <div id="googleMap" style="width:100%;height:350px;"></div>
-
-    <script>
-
-        function initMap() {
-            var myLatLng = {lat: 37.335460, lng: -121.881082};
-
-            var map = new google.maps.Map(document.getElementById('googlemap'), {
-                zoom: 4,
-                center: myLatLng
-            });
-
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'Hello World!'
-            });
-        }
-    </script>
-
-    <footer class="text-center">
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; 2016 - Ciphers
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div id="tile2" class="tile">
+                        <div class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="/images/onli_sub.png" style="width:204px; height: 161px;" onclick="displayBWeightChart()"
+                                         class="img-responsive"/>
+                                    <h4 style="text-align: center;">
+                                        Provide online subscriptions
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div id="tile2" class="tile">
+                        <div class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="/images/virt_exam.png" onclick="displayBWeightChart()"
+                                         class="img-responsive"/>
+                                    <h4 style="text-align: center;">
+                                        Virtual Examination
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+</section>
 
-    <div class="scroll-top page-scroll visible-xs visble-sm">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
+<div id="googleMap" style="width:100%;height:350px;"></div>
+
+<script>
+
+    function initMap() {
+        var myLatLng = {lat: 37.335460, lng: -121.881082};
+
+        var map = new google.maps.Map(document.getElementById('googlemap'), {
+            zoom: 4,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
+        });
+    }
+</script>
+
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; 2016 - Ciphers
+                </div>
+            </div>
+        </div>
     </div>
+</footer>
+
+<div class="scroll-top page-scroll visible-xs visble-sm">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
 </div>
 
 <script src="/javascripts/jquery-1.10.2.js"></script>

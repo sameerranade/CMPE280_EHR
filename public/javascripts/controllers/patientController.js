@@ -38,7 +38,25 @@
             $scope.languages = res[0].languagetype;
             $scope.bday = res[0].Birthday;
         });
+        $('#welcomeDiv').hide();
+        $('#patientDiv').show();
+
+        $("#closeDiv").click(function() {
+            $('#patientDiv').hide();
+            $('#welcomeDiv').show();
+            //$('#patientDiv').hide();
+        })
+
     }
+
+     $scope.getAppointments = function (pName) {
+         $scope.applist = [];
+         var url = 'http://localhost:3000/appointments/';
+         $http.get(url).success(function (res) {
+             console.log(res);
+             $scope.applist = res;
+         });
+     }
 }).filter('startFrom', function () {
     return function (input, start) {
         start = +start; //parse to int

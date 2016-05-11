@@ -1141,7 +1141,6 @@ div#loading {
 	border-top: 2px solid #005A98;
 }
 .section-heading .heading-text{
-	
 	padding: 0 .25em;
 	font-size:2.5em;
 	text-transform:uppercase;
@@ -1472,9 +1471,112 @@ video {
     object-fit: cover;
     left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%);
 }
-/*#patientDiv{*/
-    /*position: absolute;*/
-    /*visibility: hidden;*/
+#patientDiv{
+    display:none;
+    }
+#brdr{
+    border: 1px solid steelblue;
+    box-shadow: 10px 10px 5px steelblue;
+}
+#appoint #butpatient{
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
 
+.sectionChart1{
 
-/*}*/
+    display: block;
+    float: left;
+    text-align: left;
+    width:55.5%;
+    border:1px black groove;
+
+}
+.sectionChart2{
+
+    display: block;
+    float: left;
+    text-align: left;
+    width:44.5%;
+    border:1px black solid;
+
+}
+#donutchart{
+
+    width: 600px;
+    height: 300px;
+}
+
+#bubblechart{
+    margin-top: 0px;
+    width: 460px;
+    height: 700px;
+}
+
+#sparklinechart {
+    text-align: right;
+    color: gray;
+
+}
+#table-sparkline {
+    margin: 1px 1px 1px 1px;
+    border-collapse: collapse;
+}
+th {
+    font-weight: bold;
+    text-align: left;
+}
+td, th {
+    padding: 15px;
+    border-bottom: 1px solid silver;
+    height: 20px;
+}
+
+thead th {
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.highcharts-tooltip>span {
+    background: white;
+    border: 1px solid silver;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #888;
+    padding: 1px;
+}
+
+.sectionChart3{
+    padding-top: 1px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: block;
+    float: left;
+    text-align: left;
+    border:1px black solid;
+
+}
+.row1{
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 20px;
+}
+
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font: 10px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}

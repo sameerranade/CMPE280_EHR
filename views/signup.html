@@ -25,6 +25,7 @@
     <link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- IE8 support for HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -33,13 +34,20 @@
 
 </head>
 
-<body id="page-top" class="index" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" class="index" data-spy="scroll" data-target=".navbar-fixed-top"
+      style="background-image: url('/images/bg7.jpg');background-size: 100% 720px;background-repeat: no-repeat;">
 
 <div id="loading"></div>
 
 <div id="content">
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center" style="font-family:Titillium Web,Helvetica Neue,sans-serif;">
+        <div id="name1" style="float: left;">
+            <a href="/">
+            <i class="fa fa-heartbeat" style="font-size:50px;color:Red; padding: 5px;"></i>
+            <h1 style="color: white; margin-left: 15px;">Sanjeevani</h1></a>
+        </div>
+
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -50,21 +58,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!--<a class="navbar-brand" href="#page-top">Clinix</a>-->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav  navbar-left">
-                    <li>
-                        <a class="page-scroll"  href="/"><span class="glyphicon glyphicon-home"></span><b>Sanjeevni - EHR</b></a>
-                    </li>
-                </ul>
 
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
                     <li class="page-scroll">
-                        <a href="/login"><i class="fa fa-sign-in"></i> LOGIN</a>
+                        <a href="/login"><i class="fa fa-users fa-lg"></i>Login</a>
                     </li>
+
                 </ul>
 
             </div>
@@ -73,36 +76,36 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <div class="container" style="padding-top: 30px;width:900px">
+    <div class="container" style="padding-top: 80px;width:900px">
         <div class="row">
             <div class="col-md-4">
-                <h3 style="color:#007F52;font-weight: bold">Signup </h3>
+                <h3 style="font-weight: bold">Signup </h3>
                 <div class="login-or">
-                    <hr class="hr-or">
+                    
                 </div>
                 </div>
             </div>
-        <div class="row" style="margin-top: 10px">
+        <div class="row" style="margin-top: 2px">
             <div class="col-md-4">
-                <form role="form" style="color: #007F52;font-weight: bold" id ="signupForm" name="signupForm" method="POST" action="/signup">
+                <form role="form" style="font-weight: bold" id ="signupForm" name="signupForm" method="POST" action="/login">
                     <div class=" form-group" >
-                        <label id="saveResult" style="color: #2c3e50"></label><br>
+                        <label id="saveResult" ></label><br>
                         <label for="name">Name </label>
-                        <input type="text" class="form-control" id="name" required>
+                        <input type="text" class="form-control" id="name" required style="width: 100%;" >
                         <label for="user_Name">User Name </label>
-                        <input type="text" class="form-control" id="user_Name" required>
+                        <input type="text" class="form-control" id="user_Name" required style="width: 100%;">
                         <label for="user_type">User Type </label>
-                        <input type="text" class="form-control" id="user_type" required>
+                        <input type="text" class="form-control" id="user_type" required style="width: 100%;">
                         <label for="user_description">Description </label>
-                        <input type="text" class="form-control" id="user_description" required>
+                        <input type="text" class="form-control" id="user_description" required style="width: 100%;">
                         <label for="user_pass">Password </label>
-                        <input type="password" class="form-control" id="user_pass" required>
+                        <input type="password" class="form-control" id="user_pass" required style="width: 100%;">
                         <label for="user_pass">Confirm Password </label>
                         <input type="password" class="form-control" id="confirm_pass" required
-                               autocomplete="false" onkeyup="checkConfirmPassword(this.value)">
+                               autocomplete="false" onkeyup="checkConfirmPassword(this.value)" style="width: 100%;">
                         <label id="lblPassword" style="float:left"></label>
-                        <a class="pull-right" href="#">Forgot password?</a>
-                        <button type="submit" id="btnSignup" class="btn btn btn-primary" style="background-color:#FFA500;font-weight: bold">
+
+                        <button type="submit" id="btnSignup" class="btn btn btn-primary" style="horiz-align: center; text-align: center;color: black;">
                             Sign Up
                         </button>
 
@@ -111,6 +114,17 @@
             </div>
             </div>
         </div>
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; 2016 - Ciphers
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
 </body>
 <script src="/javascripts/signup.js"></script>

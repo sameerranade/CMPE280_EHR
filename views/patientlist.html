@@ -25,6 +25,8 @@
     <link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
     <!-- IE8 support for HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -36,20 +38,10 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 
-    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
-    <!--<script>-->
-<!--//        $(document).ready(function() {-->
-<!--//            var box = $("#patientDiv");-->
-<!--//            var webox = $("#welcomeDiv");-->
-            <!--$("#toggleButton").click(function(){-->
-                <!--alert("button");-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-<!--//                box.show();-->
-<!--//                webox.hide();-->
-            <!--});-->
-<!--//        });//]]>-->
 
-    <!--</script>-->
 
 </head>
 
@@ -59,7 +51,16 @@
 
 <div id="content">
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center">
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center" style="font-family:Titillium Web,Helvetica Neue,sans-serif;">
+        <div id="name" style="float: left;">
+            <i class="fa fa-heartbeat" style="font-size:50px;color:Red; padding: 2px;"></i>
+            <h1 style="color: white; margin-left: 15px;">Sanjeevani</h1>
+
+        </div>
+        <div style="color: white; float: right; margin: 40px;">
+            <a href="/" style="color: white; float: right;"><i class="glyphicon glyphicon-log-out" style="color: white; float: right;"></i>Logout</a>
+        </div>
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -75,30 +76,13 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="page-scroll">
-                        <a href="#page-top"><i class="fa fa-home fa-lg"></i> Home</a>
-                    </li>
-
-                    <li class="page-scroll">
-                        <a href="#about"><i class="fa fa-users fa-lg"></i> About Us</a>
-                    </li>
+                <!--<ul class="nav navbar-nav">-->
+                    <!--<li class="page-scroll">-->
 
 
-                    <li class="page-scroll">
-                        <a href="#services"><i class="fa fa-cogs fa-lg"></i> Services</a>
-                    </li>
+                    <!--</li>-->
 
-
-                    <li class="page-scroll">
-                        <a href="/login"><i class="fa fa-sign-in"></i> Signin</a>
-                    </li>
-
-                    <li class="page-scroll">
-                        <a href="#signup"><span class="glyphicon glyphicon-plus-sign"></span> Signup</a>
-                    </li>
-
-                </ul>
+                <!--</ul>-->
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -122,7 +106,7 @@
                             <div id="searchlist" class="col-xs-12 col-md-6 list-group"
                                  ng-repeat="patient in plist | startFrom:currentPage*pageSize | limitTo:pageSize">
 
-                                <a class="col-xs-12 col-md-6 list-group-item" id="toggleButton" style="text-align: left; width:355px;color:#005A98;"
+                                <a class="col-xs-12 col-md-6 list-group-item toggleButton" style="text-align: left; width:355px;color:#005A98;"
                                    ng-click="getPatientDetails(patient)">{{patient}}</a>
 
                             </div>
@@ -141,26 +125,32 @@
                         </div>
                     </div>
                 </div>
-                <!--<div class="col-xs-12 col-md-4" style="height: 550px;" id="welcomeDiv">-->
-                    <!--<div class="form-group">-->
-                        <!--<div class="row">-->
-                            <!--<h3 class="col-xs-12 col-md-8">Welcome Doctor!</h3>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <div class="col-xs-12 col-md-4" style="height: 550px;" id="patientDiv">
+                <div class="col-xs-12 col-md-4" style="height: 550px;" id="welcomeDiv">
                     <div class="form-group">
                         <div class="row">
+                            <h3 class="col-xs-12 col-md-8">Welcome Doctor!</h3>
+                            <br>
+                            <br>
+                            <img src="images/team/doc.jpg" style="width:291px; height: 272px;"
+                                 class="ratio img-responsive img-circle" alt="">
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-xs-12 col-md-4" style="height: 550px;" id="patientDiv">
+                    <div id="brdr">
+                    <div class="form-group">
+                        <div class="row">
+                            <button class="btn btn-danger" id="closeDiv">X</button>
                             <h3 class="col-xs-12 col-md-8">Patient Info</h3><br><br>
+                            <img src="images/gallery/photo_02.jpg" class="col-md-2 control-label"
+                                 style= "margin-left: 30px;height:100px; width:130px;padding-left: 0px;padding-right: 0px;" >
                             <label class="col-md-2 control-label">
-                                <h4 style="font-size: 20px;">
+                                <h4 style="font-family:Lato; font-weight: bold">
                                     {{pname}}
                                 </h4>
                             </label>
-                        <img src="images/gallery/photo_02.jpg" class="col-md-2 control-label" style= "margin-left: 30px;height:100px; width:130px;padding-left: 0px;
-  padding-right: 0px;" >
-
                         </div>
+
                     </div>
                     <div class="form-group">
                         <h4 ><label class="col-xs-6 col-md-4 control-label">User ID</label></h4>
@@ -201,10 +191,10 @@
                     <br>
                     <br>
                     <button type="button" class="btn btn-primary" style="margin-left: -170px;" onclick="location.href='/patient_details'">View Patient Details</button>
-
+                </div>
                 </div>
 
-                <div class="col-xs-12 col-md-4" style="height: 550px;">
+                <div class="col-xs-12 col-md-4" style="height: 550px;" id="appoint">
                     <div class="form-group">
                         <div class="row">
                             <h3 class="col-xs-12 col-md-8">Appointments</h3><br><br>
@@ -218,7 +208,7 @@
 
                                     <td>{{appointment.patient_name}}</td>
 
-                                    <td>{{appointment.appointment_date}}</td>
+                                    <td>{{appointment.appoitment_date}}</td>
 
                                     <td>{{appointment.slot_time}}</td>
 
@@ -226,6 +216,10 @@
 
                                 </tbody> </table>
                         </div>
+                        <button id="butpatient" class="btn btn-primary" ng-disabled="currentPage >= data.length/pageSize - 1"
+                        onclick="window.location.href='/doctorSummary'">
+                            See Patients Under Me
+                        </button>
                     </div>
                 </div>
 
