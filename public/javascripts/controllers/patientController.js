@@ -2,19 +2,21 @@
  * Created by sameer on 4/30/16.
  */
 
- ehrApp.controller('patientController', function ($scope, $http) {
+ehrApp.controller('patientController', function ($scope, $http) {
 
     $http.get('http://localhost:3000/patients').success(function (res) {
 
         $scope.currentPage = 0;
-        $scope.pageSize = 3;
+        $scope.pageSize = 4;
         $scope.plist = [];
         //$scope.data = [];
         $scope.numberOfPages = function () {
             return Math.ceil($scope.plist.length / $scope.pageSize);
         }
-        for (var i = 0; i < 5; i++) {
-            $scope.plist.push(res[i].user_firstname);
+        for (var i = 0; i < 40; i++) {
+            if (res[i].user_firstname != null) {
+                $scope.plist.push(res[i].user_firstname);
+            }
         }
 
     });
@@ -41,7 +43,7 @@
         $('#welcomeDiv').hide();
         $('#patientDiv').show();
 
-        $("#closeDiv").click(function() {
+        $("#closeDiv").click(function () {
             $('#patientDiv').hide();
             $('#welcomeDiv').show();
             //$('#patientDiv').hide();
@@ -49,14 +51,14 @@
 
     }
 
-     $scope.getAppointments = function (pName) {
-         $scope.applist = [];
-         var url = 'http://localhost:3000/appointments/';
-         $http.get(url).success(function (res) {
-             console.log(res);
-             $scope.applist = res;
-         });
-     }
+    $scope.getAppointments = function (pName) {
+        $scope.applist = [];
+        var url = 'http://localhost:3000/appointments/';
+        $http.get(url).success(function (res) {
+            console.log(res);
+            $scope.applist = res;
+        });
+    }
 }).filter('startFrom', function () {
     return function (input, start) {
         start = +start; //parse to int
