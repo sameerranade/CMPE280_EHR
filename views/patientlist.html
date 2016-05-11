@@ -38,16 +38,16 @@
 
     <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
     <!--<script>-->
-<!--//        $(document).ready(function() {-->
-<!--//            var box = $("#patientDiv");-->
-<!--//            var webox = $("#welcomeDiv");-->
-            <!--$("#toggleButton").click(function(){-->
-                <!--alert("button");-->
+    <!--//        $(document).ready(function() {-->
+    <!--//            var box = $("#patientDiv");-->
+    <!--//            var webox = $("#welcomeDiv");-->
+    <!--$("#toggleButton").click(function(){-->
+    <!--alert("button");-->
 
-<!--//                box.show();-->
-<!--//                webox.hide();-->
-            <!--});-->
-<!--//        });//]]>-->
+    <!--//                box.show();-->
+    <!--//                webox.hide();-->
+    <!--});-->
+    <!--//        });//]]>-->
 
     <!--</script>-->
 
@@ -108,7 +108,7 @@
     <header class="home">
         <div class="home_wrap">
             <div class="row">
-                <div class="col-xs-12 col-md-4" style="height: 550px;"  >
+                <div class="col-xs-12 col-md-4" style="height: 550px;">
                     <div class="form-group">
                         <div class="row">
                             <h3 class="col-xs-12 col-md-6">Patient List</h3><br><br>
@@ -122,7 +122,8 @@
                             <div id="searchlist" class="col-xs-12 col-md-6 list-group"
                                  ng-repeat="patient in plist | startFrom:currentPage*pageSize | limitTo:pageSize">
 
-                                <a class="col-xs-12 col-md-6 list-group-item" id="toggleButton" style="text-align: left; width:355px;color:#005A98;"
+                                <a class="col-xs-12 col-md-6 list-group-item" id="toggleButton"
+                                   style="text-align: left; width:355px;color:#005A98;"
                                    ng-click="getPatientDetails(patient)">{{patient}}</a>
 
                             </div>
@@ -142,65 +143,68 @@
                     </div>
                 </div>
                 <!--<div class="col-xs-12 col-md-4" style="height: 550px;" id="welcomeDiv">-->
-                    <!--<div class="form-group">-->
-                        <!--<div class="row">-->
-                            <!--<h3 class="col-xs-12 col-md-8">Welcome Doctor!</h3>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
+                <!--<div class="form-group">-->
+                <!--<div class="row">-->
+                <!--<h3 class="col-xs-12 col-md-8">Welcome Doctor!</h3>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
                 <div class="col-xs-12 col-md-4" style="height: 550px;" id="patientDiv">
                     <div class="form-group">
                         <div class="row">
                             <h3 class="col-xs-12 col-md-8">Patient Info</h3><br><br>
+
+                            <img src="images/gallery/photo_02.jpg" class="col-md-2 control-label" style="margin-left: 30px;height:100px; width:130px;padding-left: 0px;
+  padding-right: 0px;">
                             <label class="col-md-2 control-label">
                                 <h4 style="font-size: 20px;">
                                     {{pname}}
                                 </h4>
                             </label>
-                        <img src="images/gallery/photo_02.jpg" class="col-md-2 control-label" style= "margin-left: 30px;height:100px; width:130px;padding-left: 0px;
-  padding-right: 0px;" >
 
                         </div>
                     </div>
                     <div class="form-group">
-                        <h4 ><label class="col-xs-6 col-md-4 control-label">User ID</label></h4>
-                        <h4><label id="lblid" class="col-xs-6 col-md-4 control-label" >{{uid}}</label></h4>
+                        <h4><label class="col-xs-6 col-md-4 control-label">User ID</label></h4>
+                        <h4><label id="lblid" class="col-xs-6 col-md-4 control-label">{{uid}}</label></h4>
                     </div>
                     <br>
                     <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label" >Height</label></h4>
-                        <h4><label id="lblheight" class="col-xs-6 col-md-4 control-label" >{{height}}</label></h4>
+                        <h4><label class="col-xs-6 col-md-4 control-label">Height</label></h4>
+                        <h4><label id="lblheight" class="col-xs-6 col-md-4 control-label">{{height}}</label></h4>
 
                     </div>
                     <br>
                     <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label" >Weight</label></h4>
-                        <h4 ><label id="lblweight" class="col-xs-6 col-md-4 control-label">{{weight}}</label></h4>
+                        <h4><label class="col-xs-6 col-md-4 control-label">Weight</label></h4>
+                        <h4><label id="lblweight" class="col-xs-6 col-md-4 control-label">{{weight}}</label></h4>
                     </div>
                     <br>
                     <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label" >Address</label></h4>
-                        <h4><label id="lbladdress" class="col-xs-6 col-md-4 control-label" >{{address}}</label></h4>
+                        <h4><label class="col-xs-6 col-md-4 control-label">Address</label></h4>
+                        <h4><label id="lbladdress" class="col-xs-6 col-md-4 control-label">{{address}}</label></h4>
                     </div>
                     <br>
                     <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label" >Phone</label></h4>
+                        <h4><label class="col-xs-6 col-md-4 control-label">Phone</label></h4>
 
-                        <h4 ><label id="lblphone" class="col-xs-6 col-md-4 control-label" >{{phone}}</label></h4>
+                        <h4><label id="lblphone" class="col-xs-6 col-md-4 control-label">{{phone}}</label></h4>
 
                     </div>
                     <br>
                     <div class="form-group">
-                        <h4><label class="col-xs-6 col-md-4 control-label" >Emergency Phone</label></h4>
+                        <h4><label class="col-xs-6 col-md-4 control-label">Emergency Phone</label></h4>
 
-                        <h4><label id="lblemercon" class="col-xs-6 col-md-4 control-label" >{{emerphone}}</label>
+                        <h4><label id="lblemercon" class="col-xs-6 col-md-4 control-label">{{emerphone}}</label>
                         </h4>
 
                     </div>
                     <br>
                     <br>
                     <br>
-                    <button type="button" class="btn btn-primary" style="margin-left: -170px;" onclick="location.href='/patient_details'">View Patient Details</button>
+                    <button type="button" class="btn btn-primary" style="margin-left: -170px;"
+                            onclick="location.href='/patient_details'">View Patient Details
+                    </button>
 
                 </div>
 
@@ -209,9 +213,15 @@
                         <div class="row">
                             <h3 class="col-xs-12 col-md-8">Appointments</h3><br><br>
                             <img src="images/gallery/capture.png" class="col-md-2 control-label" class="img-responsive"
-                                 ng-click="getAppointments()" style= "height:130px; width:150px; margin-left: 50px;">
+                                 ng-click="getAppointments()" style="height:130px; width:150px; margin-left: 50px;">
                             <table ng-controller="patientController" class="table table-striped" style="color:#005A98">
-                                <thead><tr><th>Patient Name</th><th>Appointment Date</th><th>Slot Time</th>< tr></thead>
+                                <thead>
+                                <tr>
+                                    <th>Patient Name</th>
+                                    <th>Appointment Date</th>
+                                    <th>Slot Time</th>
+                                </tr>
+                                </thead>
 
                                 <tbody>
                                 <tr ng-repeat="appointment in applist">
@@ -224,7 +234,8 @@
 
                                 </tr>
 
-                                </tbody> </table>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
