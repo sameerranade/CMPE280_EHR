@@ -53,11 +53,11 @@ router.post('/signup',function(req,res){
             }
             else
             {
-                res.end("Server received the data");
+                res.render('index');
             }
         });
 
-    connection.end();
+    //connection.end();
 });
 
 router.get('/plist', function (req, res, next) {

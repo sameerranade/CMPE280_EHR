@@ -63,10 +63,8 @@ function handleResponse() {
     console.log("Inside handleResponse: readyState & status is");
     console.log(xmlhttpRequest.readyState+' ' + xmlhttpRequest.status);
     if (xmlhttpRequest.readyState == 4 && xmlhttpRequest.status == 200) {
-        document.getElementById("signupForm").reset();
-        document.getElementById("saveResult").innerHTML
-            = (xmlhttpRequest.responseText +". You can now login.");
 
+        window.location.href = '/login';
         console.log("Form  submitted succesfully.");
     }
     else {
