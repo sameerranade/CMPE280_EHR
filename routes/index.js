@@ -2,7 +2,7 @@ var express = require('express');
 var mysql = require('mysql');
 var router = express.Router();
 
-
+/*
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -10,15 +10,15 @@ var connection = mysql.createConnection({
     database: 'sanjeevani',
     port : '3306'
 });
+*/
 
-/*
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'nishanth',
     database: 'yelp',
     port : '3306'
-});*/
+});
 
 connection.connect( function(err){
     if (err){

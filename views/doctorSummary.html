@@ -4,6 +4,8 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
 
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -24,6 +26,10 @@
 .node {
   font: 10px sans-serif;
 }
+body{
+  position: relative;
+  padding-top: 100px;
+}
 .link {
   fill: none;
   stroke: #ccc;
@@ -33,9 +39,40 @@ h1{
   text-align: center;
   color: #005A98;
 }
+h4{
+  position: relative;
+  color: #005A98;
+  padding-left: 200px;
+}
+.row{
+  min-width: 310px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.vaccination_chart {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 40px;
+  position: relative;
+}
+img{
+  height: 150px !important;
+  width: 400px !important;
+}
+
+.bullet { font: 10px sans-serif; }
+.bullet .marker { stroke: #000; stroke-width: 2px; }
+.bullet .tick line { stroke: #666; stroke-width: .5px; }
+.bullet .range.s0 { fill: #eee; }
+.bullet .range.s1 { fill: #ddd; }
+.bullet .range.s2 { fill: #ccc; }
+.bullet .measure.s0 { fill: lightsteelblue; }
+.bullet .measure.s1 { fill: steelblue; }
+.bullet .title { font-size: 14px; font-weight: bold; }
+.bullet .subtitle { fill: #999; }
+
 </style>
 
-  <title>Doctor Summary Details</title>
+<title>Doctor Summary Details</title>
 
 <script type="text/javascript">
 $(function () {
@@ -108,7 +145,7 @@ $(function () {
 
 <script type="text/javascript">
 window.onload=function(){
-var radius = 960 / 2;
+var radius = 600 / 2;
 
 var cluster = d3.layout.cluster()
     .size([360, radius - 120]);
@@ -126,105 +163,103 @@ var svg = d3.select("#cluster_chart").append("svg")
 var data = {
     "name": "diseases",
         "children": [{
-        "name": "Common Cold",
+        "name": "Coronary artery disease",
             "children": [{
-            "name": "Scratchy or sore throat",
+            "name": "Inflamed blood vessels",
+            "size": 1600
             }, {
-            "name": "Sneezing",
-            }, {
-            "name": "Mucus draining from your nose into your throat",
+            "name": "Internal blood clots",
+            "size": 1600
+          },
+          {
+            "name": "Anxiety",
+            "size": 1600
+          },
+          {
+            "name": "Hypertension",
+            "size": 1600
+        }]
+    },
+     {
+        "name": "Hole in heart (Hole in Septum)",
+            "children": [{
+            "name": "atrial septal defect: (ASD)",
+                "size": 1600
+        }, {
+            "name": "Ventricular septal defect: (VSD)",
+                "size": 1600
         }]
     }, {
-        "name": "Anemia"
-    }, {
-        "name": "Hepatitis B",
+        "name": "Pericarditis",
             "children": [{
-            "name": "Abdominal pain",
-                "size": 1759
+            "name": "Chest pain",
+                "size": 1600
         }, {
-            "name": "Fever",
-                "size": 2165
+            "name": "Persistent low grade fever",
+                "size": 1600
         }, {
-            "name": "Joint pain",
-                "size": 586
-        }, {
-            "name": "Weakness and fatigue",
-                "size": 3331
-        }, {
-            "name": "Yellowing of your skin and the whites of your eyes (jaundice)",
-                "size": 772
-        }]
-    }, {
-        "name": "Lung Cancer",
-            "children": [{
-            "name": "Coughing up blood or rust-colored sputum (spit or phlegm)",
-                "size": 8833
-        }, {
-            "name": "Weight loss and loss of appetite",
-                "size": 1732
-        }, {
-            "name": "Infections such as bronchitis and pneumonia that don’t go away or keep coming back",
-                "size": 3623
+            "name": "Cancer",
+                "size": 600
         }, {
             "name": "Shortness of breath",
-                "size": 10066
+                "size": 1600
         }]
     }, {
-        "name": "Diarrhea   ",
+        "name": "Aorta Disease   ",
             "children": [{
-            "name": "Signs of dehydration",
-                "size": 4116
+            "name": "Atheroscelorosis",
+                "size": 1600
         }]
     }, {
-        "name": "Strep Throat",
+        "name": "Vascular Disease",
             "children": [{
-            "name": "Painful swallowing",
-                "size": 1124
+            "name": "Atheroscelorotic plaques",
+                "size": 1600
         }, {
-            "name": "Swollen, tender lymph nodes in your neck",
-                "size": 1876
+            "name": "Dislodged thrombus",
+                "size": 1600
         }, {
-            "name": "Headache",
-                "size": 1101
+            "name": "Aneurysm rupture",
+                "size": 1600
         }]
     }, {
-        "name": "Heart Disease",
+        "name": "Abnormal Heart rhythms",
             "children": [{
             "name": "A faster heartbeat",
-                "size": 2105
+                "size": 1600
         }, {
             "name": "Shortness of breath",
-                "size": 1316
+                "size": 600
         }, {
             "name": "Nausea",
-                "size": 3151
+                "size": 1600
         }, {
             "name": "Sweating",
-                "size": 3770
+                "size": 1600
         }]
     }, {
-        "name": "Sexually Transmitted Diseases",
+        "name": "Heart Failure",
             "children": [{
-            "name": "Fever and flu-like symptoms",
-                "size": 5559
+            "name": "Cardiomyopathy",
+                "size": 1600
         }, {
-            "name": "Swollen lymph nodes",
-                "size": 19118
+            "name": "Heart Attack",
+                "size": 1600
         }, {
-            "name": "Genital itching, burning, or discomfort",
-                "size": 6887
+            "name": "Myocordial Infarction",
+                "size": 1600
         }]
     }, {
-        "name": "Type 2 Diabetes",
+        "name": "Heart Muscle Disease",
             "children": [{
-            "name": "Increased thirst and frequent urination"
+            "name": "Coronoary Artery Disease"
         }, {
-            "name": "Blurred vision"
+            "name": "Congenital Heart Disease"
         }, {
             "name": "Increased hunger",
         }, {
-            "name": "Weight loss",
-                "size": 16540
+            "name": "Dialated Cardiomyopathy",
+                "size": 1600
         }]
     }]
 };
@@ -289,12 +324,256 @@ function click(d) {
 }
 </script>
 
+<script>
+(function() {
+
+// Chart design based on the recommendations of Stephen Few. Implementation
+// based on the work of Clint Ivy, Jamie Love, and Jason Davies.
+// http://projects.instantcognition.com/protovis/bulletchart/
+d3.bullet = function() {
+  var orient = "left", // TODO top & bottom
+      reverse = false,
+      duration = 0,
+      ranges = bulletRanges,
+      markers = bulletMarkers,
+      measures = bulletMeasures,
+      width = 380,
+      height = 30,
+      tickFormat = null;
+
+  // For each small multiple…
+  function bullet(g) {
+    g.each(function(d, i) {
+      var rangez = ranges.call(this, d, i).slice().sort(d3.descending),
+          markerz = markers.call(this, d, i).slice().sort(d3.descending),
+          measurez = measures.call(this, d, i).slice().sort(d3.descending),
+          g = d3.select(this);
+
+      // Compute the new x-scale.
+      var x1 = d3.scale.linear()
+          .domain([0, Math.max(rangez[0], markerz[0], measurez[0])])
+          .range(reverse ? [width, 0] : [0, width]);
+
+      // Retrieve the old x-scale, if this is an update.
+      var x0 = this.__chart__ || d3.scale.linear()
+          .domain([0, Infinity])
+          .range(x1.range());
+
+      // Stash the new scale.
+      this.__chart__ = x1;
+
+      // Derive width-scales from the x-scales.
+      var w0 = bulletWidth(x0),
+          w1 = bulletWidth(x1);
+
+      // Update the range rects.
+      var range = g.selectAll("rect.range")
+          .data(rangez);
+
+      range.enter().append("rect")
+          .attr("class", function(d, i) { return "range s" + i; })
+          .attr("width", w0)
+          .attr("height", height)
+          .attr("x", reverse ? x0 : 0)
+        .transition()
+          .duration(duration)
+          .attr("width", w1)
+          .attr("x", reverse ? x1 : 0);
+
+      range.transition()
+          .duration(duration)
+          .attr("x", reverse ? x1 : 0)
+          .attr("width", w1)
+          .attr("height", height);
+
+      // Update the measure rects.
+      var measure = g.selectAll("rect.measure")
+          .data(measurez);
+
+      measure.enter().append("rect")
+          .attr("class", function(d, i) { return "measure s" + i; })
+          .attr("width", w0)
+          .attr("height", height / 3)
+          .attr("x", reverse ? x0 : 0)
+          .attr("y", height / 3)
+        .transition()
+          .duration(duration)
+          .attr("width", w1)
+          .attr("x", reverse ? x1 : 0);
+
+      measure.transition()
+          .duration(duration)
+          .attr("width", w1)
+          .attr("height", height / 3)
+          .attr("x", reverse ? x1 : 0)
+          .attr("y", height / 3);
+
+      // Update the marker lines.
+      var marker = g.selectAll("line.marker")
+          .data(markerz);
+
+      marker.enter().append("line")
+          .attr("class", "marker")
+          .attr("x1", x0)
+          .attr("x2", x0)
+          .attr("y1", height / 6)
+          .attr("y2", height * 5 / 6)
+        .transition()
+          .duration(duration)
+          .attr("x1", x1)
+          .attr("x2", x1);
+
+      marker.transition()
+          .duration(duration)
+          .attr("x1", x1)
+          .attr("x2", x1)
+          .attr("y1", height / 6)
+          .attr("y2", height * 5 / 6);
+
+      // Compute the tick format.
+      var format = tickFormat || x1.tickFormat(8);
+
+      // Update the tick groups.
+      var tick = g.selectAll("g.tick")
+          .data(x1.ticks(8), function(d) {
+            return this.textContent || format(d);
+          });
+
+      // Initialize the ticks with the old scale, x0.
+      var tickEnter = tick.enter().append("g")
+          .attr("class", "tick")
+          .attr("transform", bulletTranslate(x0))
+          .style("opacity", 1e-6);
+
+      tickEnter.append("line")
+          .attr("y1", height)
+          .attr("y2", height * 7 / 6);
+
+      tickEnter.append("text")
+          .attr("text-anchor", "middle")
+          .attr("dy", "1em")
+          .attr("y", height * 7 / 6)
+          .text(format);
+
+      // Transition the entering ticks to the new scale, x1.
+      tickEnter.transition()
+          .duration(duration)
+          .attr("transform", bulletTranslate(x1))
+          .style("opacity", 1);
+
+      // Transition the updating ticks to the new scale, x1.
+      var tickUpdate = tick.transition()
+          .duration(duration)
+          .attr("transform", bulletTranslate(x1))
+          .style("opacity", 1);
+
+      tickUpdate.select("line")
+          .attr("y1", height)
+          .attr("y2", height * 7 / 6);
+
+      tickUpdate.select("text")
+          .attr("y", height * 7 / 6);
+
+      // Transition the exiting ticks to the new scale, x1.
+      tick.exit().transition()
+          .duration(duration)
+          .attr("transform", bulletTranslate(x1))
+          .style("opacity", 1e-6)
+          .remove();
+    });
+    d3.timer.flush();
+  }
+
+  // left, right, top, bottom
+  bullet.orient = function(x) {
+    if (!arguments.length) return orient;
+    orient = x;
+    reverse = orient == "right" || orient == "bottom";
+    return bullet;
+  };
+
+  // ranges (bad, satisfactory, good)
+  bullet.ranges = function(x) {
+    if (!arguments.length) return ranges;
+    ranges = x;
+    return bullet;
+  };
+
+  // markers (previous, goal)
+  bullet.markers = function(x) {
+    if (!arguments.length) return markers;
+    markers = x;
+    return bullet;
+  };
+
+  // measures (actual, forecast)
+  bullet.measures = function(x) {
+    if (!arguments.length) return measures;
+    measures = x;
+    return bullet;
+  };
+
+  bullet.width = function(x) {
+    if (!arguments.length) return width;
+    width = x;
+    return bullet;
+  };
+
+  bullet.height = function(x) {
+    if (!arguments.length) return height;
+    height = x;
+    return bullet;
+  };
+
+  bullet.tickFormat = function(x) {
+    if (!arguments.length) return tickFormat;
+    tickFormat = x;
+    return bullet;
+  };
+
+  bullet.duration = function(x) {
+    if (!arguments.length) return duration;
+    duration = x;
+    return bullet;
+  };
+
+  return bullet;
+};
+
+function bulletRanges(d) {
+  return d.ranges;
+}
+
+function bulletMarkers(d) {
+  return d.markers;
+}
+
+function bulletMeasures(d) {
+  return d.measures;
+}
+
+function bulletTranslate(x) {
+  return function(d) {
+    return "translate(" + x(d) + ",0)";
+  };
+}
+
+function bulletWidth(x) {
+  var x0 = x(0);
+  return function(d) {
+    return Math.abs(x(d) - x0);
+  };
+}
+
+})();
+</script>
 </head>
 
 <body>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
 
 <div class="col-md-4 col-xs-12">
     <div class="nav-side-menu">
@@ -344,39 +623,165 @@ function click(d) {
         </div>
     </div>
 </div>
-
 <div class="col-md-8 col-xs-12">
-    <div class="collapse navbar-collapse navbar-left" id="example-navbar">
-        <ul class="nav navbar-nav">
-            <li><a> <span class="glyphicon glyphicon-grain"> </span> <button id="hide">Hide</button></a></li>
-            <li><a> <span class="glyphicon glyphicon-heart-empty"> </span> <button id="show_cluster">Diseases Cluster</button></a>
-            </li>
-            <li><a> <span class="glyphicon glyphicon-folder-open"> </span> <button id="show_age">Patient Age Details</button></a>
-            </li>
-            <li><a> <span class="glyphicon glyphicon-tint"> </span> Medications</a></li>
-            <li><a> <span class="glyphicon glyphicon-ok-sign"> </span> Vaccination &
-                Immunizations</a></li>
-        </ul>
-    </div>
+    <div class="col-md-12">
+        <div id="main">
+          <div class="col-md-8 col-xs-12">
+
+              <!-- angular templating -->
+              <!-- this is where content will be injected -->
+              <div class="container dynamicTile">
+                  <div class="row ">
+                      <div class="col-sm-2 col-xs-4">
+                          <div id="tile1" class="tile">
+                              <div class="carousel slide" data-ride="carousel">
+                                  <!-- Wrapper for slides -->
+                                  <div class="carousel-inner">
+                                      <div class="item active">
+                                          <img src="/images/disease.png" id="show_cluster"
+                                               class="img-responsive"/>
+                                          <h6 style="text-align: center;">
+                                              Disease Chart
+                                          </h6>
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-xs-4">
+                          <div id="tile2" class="tile">
+                              <div class="carousel slide" data-ride="carousel">
+                                  <!-- Wrapper for slides -->
+                                  <div class="carousel-inner">
+                                      <div class="item active">
+                                          <img src="/images/age.png" id="show_age"
+                                               class="img-responsive"/>
+                                          <h6 style="text-align: center;">
+                                              Age Chart
+                                          </h6>
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-xs-4">
+                          <div id="tile3" class="tile">
+                              <div class="carousel slide" data-ride="carousel">
+                                  <!-- Wrapper for slides -->
+                                  <div class="carousel-inner">
+                                      <div class="item active">
+                                          <img src="/images/critical.png" id="show_criticality"
+                                               class="img-responsive"/>
+                                          <h6 style="text-align: center;">
+                                              Criticality Chart
+                                          </h6>
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 <div class="row">
+  <div class="col-md-8 col-xs-12">
   <div class="age_chart">
-      <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+      <div id="container"></div>
     </div>
+  </div>
 
+  <div class="col-md-8 col-xs-12">
     <div class="cluster_chart" id="cluster_chart">
     </div>
+  </div>
+
+  <div class="col-md-8 col-xs-12">
+    <div class="vaccination_chart" id="vaccination_chart">
+      <h4>Patient Criticality Chart </h4>
+    </div>
+  </div>
 
   </div>
 </div>
+<script>
+var margin = {top: 5, right: 40, bottom: 20, left: 120},
+    width = 650 - margin.left - margin.right,
+    height = 50 - margin.top - margin.bottom;
+
+var chart = d3.bullet()
+    .width(width)
+    .height(height);
+
+d3.json("/d3/bullet.json", function(error, data) {
+  if (error) throw error;
+
+  var svg = d3.select("#vaccination_chart").selectAll("svg")
+      .data(data)
+    .enter().append("svg")
+      .attr("class", "bullet")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .call(chart);
+
+  var title = svg.append("g")
+      .style("text-anchor", "end")
+      .attr("transform", "translate(-6," + height / 2 + ")");
+
+  title.append("text")
+      .attr("class", "title")
+      .text(function(d) { return d.title; });
+
+  title.append("text")
+      .attr("class", "subtitle")
+      .attr("dy", "1em")
+      .text(function(d) { return d.subtitle; });
+
+  });
+
+function randomize(d) {
+  if (!d.randomizer) d.randomizer = randomizer(d);
+  d.ranges = d.ranges.map(d.randomizer);
+  d.markers = d.markers.map(d.randomizer);
+  d.measures = d.measures.map(d.randomizer);
+  return d;
+}
+
+function randomizer(d) {
+  var k = d3.max(d.ranges) * .2;
+  return function(d) {
+    return Math.max(0, d + k * (Math.random() - .5));
+  };
+}
+</script>
 
 <script>
 $(document).ready(function(){
-    $("#hide").click(function(){
-        $(".age_chart").hide();
-    });
+  $(".age_chart").hide();
+  $(".cluster_chart").show();
+  $(".vaccination_chart").hide();
+
     $("#show_age").click(function(){
-        $(".age_chart").show();
+      $(".cluster_chart").hide();
+      $(".vaccination_chart").hide();
+      $(".age_chart").show();
+    });
+    $("#show_cluster").click(function(){
+      $(".cluster_chart").show();
+      $(".vaccination_chart").hide();
+      $(".age_chart").hide();
+    });
+    $("#show_criticality").click(function(){
+      $(".cluster_chart").hide();
+      $(".age_chart").hide();
+      $(".vaccination_chart").show();
     });
 });
 </script>
