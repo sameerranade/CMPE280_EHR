@@ -90,6 +90,10 @@
   width: 20px;
   padding-right: 20px;
 }
+.nav-side-menu button{
+  position: relative;
+  left: 20%;
+}
 .nav-side-menu li:hover {
   border-left: 3px solid #d19b3d;
   background-color: #4f5b69;

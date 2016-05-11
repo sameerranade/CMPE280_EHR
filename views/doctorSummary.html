@@ -26,9 +26,10 @@
 .node {
   font: 10px sans-serif;
 }
-body{
-  position: relative;
-  padding-top: 100px;
+
+.offset{
+  position: relative !important;
+  padding-top: 40px !important;
 }
 .link {
   fill: none;
@@ -55,8 +56,8 @@ h4{
   position: relative;
 }
 img{
-  height: 150px !important;
-  width: 400px !important;
+  height: 100px !important;
+  width: 150px !important;
 }
 
 .bullet { font: 10px sans-serif; }
@@ -574,141 +575,173 @@ function bulletWidth(x) {
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-
+<div class="offset">
 <div class="col-md-4 col-xs-12">
-    <div class="nav-side-menu">
-        <div class="brand"><a>Sanjeevani Hospitals</a></div>
-        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  <div class="nav-side-menu">
+      <div class="brand"><a>Sanjeevani Hospitals</a></div>
+      <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
-        <div class="menu-list">
+      <div class="menu-list">
 
-            <ul id="menu-content" class="menu-content collapse out">
+          <ul id="menu-content" class="menu-content collapse out">
 
-                <li>
-                    <a href="#">
-                        <i class="fa fa-dashboard fa-lg"></i> Doctor Summary
-                    </a>
-                </li>
+              <li>
+                  <a href="#">
+                      <i class="fa fa-dashboard fa-lg"></i> Doctor Summary
+                  </a>
+              </li>
 
-                <li>
-                    <a href="#">
-                        <i class="fa fa-user fa-lg"></i> Name: Dr. Jason Bourne
-                    </a>
-                </li>
-                </a>
+              <li>
+                  <a href="#">
+                      <i class="fa fa-user fa-lg"></i> Name: Dr. Jason Bourne
+                  </a>
+              </li>
+              </a>
 
-                <li>
-                    <a href="#">
-                        <i class="fa fa-user fa-lg"></i> Age: 48
-                    </a>
-                </li>
+              <li>
+                  <a href="#">
+                      <i class="fa fa-user fa-lg"></i> Age: 48
+                  </a>
+              </li>
 
-                <li>
-                    <a href="#">
-                        <i class="fa fa-user fa-lg"></i> Specialization: Cardiology
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-users fa-lg"></i> Phone: 669-888-6221
-                    </a>
-                </li>
+              <li>
+                  <a href="#">
+                      <i class="fa fa-user fa-lg"></i> Specialization: Cardiology
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <i class="fa fa-users fa-lg"></i> Phone: 669-888-6221
+                  </a>
+              </li>
 
-                <li>
-                    <a href="#">
-                        <i class="fa fa-user fa-lg"></i> Address: Washington Square, San Jose
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+              <li>
+                  <a href="#">
+                      <i class="fa fa-user fa-lg"></i> Address: Washington Square, San Jose
+                  </a>
+              </li>
+          </ul>
+      </div><br/><br/>
+      <button type="button" class="btn btn-secondary"><a href="/plist">Return to Patients list</a></button>
+  </div>
 </div>
+
 <div class="col-md-8 col-xs-12">
+
+  <nav class="navbar navbar-default">
+    <div id="name" style="float:left;">
+        <i class="fa fa-heartbeat" style="font-size:50px;color:Red; padding: 2px;"></i>
+        <h1 style="color: #005A98; margin-left: 15px;">Sanjeevani</h1>
+
+    </div>
+    <div style="color: #005A98; float: right; margin: 40px;">
+        <a href="/" style="color: #005A98 ; float: right;"><i class="glyphicon glyphicon-log-out" style="color: white; float: right;"></i>Logout</a>
+    </div>
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--<a class="navbar-brand" href="#page-top">Clinix</a>-->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!--<ul class="nav navbar-nav">-->
+                <!--<li class="page-scroll">-->
+
+
+                <!--</li>-->
+
+            <!--</ul>-->
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+  </nav>
+
+
+  <br><br/>
     <div class="col-md-12">
         <div id="main">
-          <div class="col-md-8 col-xs-12">
 
-              <!-- angular templating -->
-              <!-- this is where content will be injected -->
-              <div class="container dynamicTile">
-                  <div class="row ">
-                      <div class="col-sm-2 col-xs-4">
-                          <div id="tile1" class="tile">
-                              <div class="carousel slide" data-ride="carousel">
-                                  <!-- Wrapper for slides -->
-                                  <div class="carousel-inner">
-                                      <div class="item active">
-                                          <img src="/images/disease.png" id="show_cluster"
-                                               class="img-responsive"/>
-                                          <h6 style="text-align: center;">
-                                              Disease Chart
-                                          </h6>
-                                      </div>
-                                  </div>
-                              </div>
+            <!-- angular templating -->
+            <!-- this is where content will be injected -->
+            <div class="container dynamicTile">
+                <div class="row ">
+                    <div class="col-sm-2 col-xs-4">
+                        <div id="tile1" class="tile">
+                            <div class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                      <img src="/images/critical.png" id="show_criticality"
+                                           class="img-responsive"/>
+                                        <h6 style="text-align: center;">
+                                            Criticality Chart
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
 
-                          </div>
-                      </div>
-                      <div class="col-sm-2 col-xs-4">
-                          <div id="tile2" class="tile">
-                              <div class="carousel slide" data-ride="carousel">
-                                  <!-- Wrapper for slides -->
-                                  <div class="carousel-inner">
-                                      <div class="item active">
-                                          <img src="/images/age.png" id="show_age"
-                                               class="img-responsive"/>
-                                          <h6 style="text-align: center;">
-                                              Age Chart
-                                          </h6>
-                                      </div>
-                                  </div>
-                              </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-xs-4">
+                        <div id="tile2" class="tile">
+                            <div class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                      <img src="/images/age.png" id="show_age"
+                                           class="img-responsive"/>
+                                        <h6 style="text-align: center;">
+                                            Age Demography Chart
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
 
-                          </div>
-                      </div>
-                      <div class="col-sm-2 col-xs-4">
-                          <div id="tile3" class="tile">
-                              <div class="carousel slide" data-ride="carousel">
-                                  <!-- Wrapper for slides -->
-                                  <div class="carousel-inner">
-                                      <div class="item active">
-                                          <img src="/images/critical.png" id="show_criticality"
-                                               class="img-responsive"/>
-                                          <h6 style="text-align: center;">
-                                              Criticality Chart
-                                          </h6>
-                                      </div>
-                                  </div>
-                              </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-xs-4">
+                        <div id="tile3" class="tile">
+                            <div class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                      <img src="/images/disease.png" id="show_cluster"
+                                           class="img-responsive"/>
+                                        <h6 style="text-align: center;">
+                                            Diseases Chart
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
 
-                          </div>
-                      </div>
-                  </div>
-              </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="row">
+              <div class="age_chart">
+                  <div id="container"></div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="cluster_chart" id="cluster_chart"></div>
+            </div>
+            <div class="row">
+                <div class="vaccination_chart" id="vaccination_chart"></div>
+            </div>
         </div>
-
-<div class="row">
-  <div class="col-md-8 col-xs-12">
-  <div class="age_chart">
-      <div id="container"></div>
     </div>
-  </div>
-
-  <div class="col-md-8 col-xs-12">
-    <div class="cluster_chart" id="cluster_chart">
-    </div>
-  </div>
-
-  <div class="col-md-8 col-xs-12">
-    <div class="vaccination_chart" id="vaccination_chart">
-      <h4>Patient Criticality Chart </h4>
-    </div>
-  </div>
-
-  </div>
 </div>
+</div>
+
 <script>
 var margin = {top: 5, right: 40, bottom: 20, left: 120},
     width = 650 - margin.left - margin.right,
@@ -765,8 +798,8 @@ function randomizer(d) {
 <script>
 $(document).ready(function(){
   $(".age_chart").hide();
-  $(".cluster_chart").show();
-  $(".vaccination_chart").hide();
+  $(".cluster_chart").hide();
+  $(".vaccination_chart").show();
 
     $("#show_age").click(function(){
       $(".cluster_chart").hide();
