@@ -40,10 +40,11 @@ router.post('/signup',function(req,res){
     var user_description  = req.body.user_description ;
     var user_pass  = req.body.user_pass ;
 
-    console.log(user_Name);
-    console.log(user_pass,name,user_description,user_type);
-    connection.query('INSERT INTO users ' +
-        '(user_type ,user_description,user_Name ,user_pass,name) VALUES ' +
+    console.log(req.body);
+    //console.log(user_Name);
+    //console.log(user_pass,name,user_description,user_type);
+    connection.query('INSERT INTO Users ' +
+        '(user_type ,user_description,user_lastname ,user_pass,user_firstname) VALUES ' +
         '("'+user_type+'","'+user_description+'","'+user_Name+'","'+user_pass+'","'+name+'")',
         function(err, fields) {
             if(err)
