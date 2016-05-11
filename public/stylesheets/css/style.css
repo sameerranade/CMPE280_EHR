@@ -45,7 +45,7 @@ h4 {
 }
 hr.star-light,
 hr.star-primary {
-    /*margin: 25px auto 30px;*/
+    margin: 25px auto 30px;
     padding: 0;
     max-width: 250px;
     border: 0;
@@ -1481,13 +1481,11 @@ video {
 
 
 .sectionChart1{
-
     display: block;
     float: left;
     text-align: left;
     width:55.5%;
     border:1px black groove;
-
 }
 .sectionChart2{
 
