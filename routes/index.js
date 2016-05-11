@@ -2,21 +2,11 @@ var express = require('express');
 var mysql = require('mysql');
 var router = express.Router();
 
-
 var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'maithili@123',
-    database: 'sanjeevani',
-    port : '3306'
-});
-
-
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'SRmay@123',
-    database: 'EHR',
+    host: 'cmpe280.chowxkprohlg.us-west-1.rds.amazonaws.com',
+    user: 'ciphers',
+    password: 'ciphers280',
+    database: 'SANJEEVANI',
     port : '3306'
 });
 
@@ -78,7 +68,7 @@ router.get('/plist', function (req, res, next) {
 router.get('/patients', function (req, res, next) {
 
 
-    connection.query('SELECT * from users', function (err, rows, fields) {
+    connection.query('SELECT * from Users', function (err, rows, fields) {
         if (err) {
             throw err;
         }
@@ -93,7 +83,7 @@ router.get('/patients', function (req, res, next) {
 router.get('/patients/:pName', function (req, res, data) {
     var patientName = req.params.pName;
 
-    connection.query('SELECT uer_id from users where user_firstName = ?', patientName, function (err, rows, fields) {
+    connection.query('SELECT uer_id from Users where user_firstName = ?', patientName, function (err, rows, fields) {
         if (err) {
             throw err;
         }

@@ -7,16 +7,17 @@
     $http.get('http://localhost:3000/patients').success(function (res) {
 
         $scope.currentPage = 0;
-        $scope.pageSize = 3;
+        $scope.pageSize = 4;
         $scope.plist = [];
         //$scope.data = [];
         $scope.numberOfPages = function () {
             return Math.ceil($scope.plist.length / $scope.pageSize);
         }
-        for (var i = 0; i < 5; i++) {
-            $scope.plist.push(res[i].user_firstname);
+        for (var i = 0; i <20; i++) {
+            if(res[i].user_Name != null) {
+                $scope.plist.push(res[i].user_Name);
+            }
         }
-
     });
 
     $scope.getPatientDetails = function (pName) {
