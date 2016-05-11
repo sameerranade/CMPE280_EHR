@@ -73,7 +73,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="page-scroll">
-                        <a href="/landingpage.html"><i class="glyphicon glyphicon-log-out"></i> Logout</a>
+                        <a href="/"><i class="glyphicon glyphicon-log-out"></i> Logout</a>
                     </li>
 
                 </ul>
@@ -210,8 +210,10 @@
 
                                 </tbody> </table>
                         </div>
-                        <img id="butpatient" src="images/gallery/patbutton.png" class="col-md-2 control-label"
-                             style= "margin-left: 30px;height:70px; width:150px;padding-left: 0px;padding-right: 0px;" >
+                        <button id="butpatient" class="btn btn-primary" ng-disabled="currentPage >= data.length/pageSize - 1"
+                        onclick="window.location.href='/doctorSummary'">
+                            See Patients Under Me
+                        </button>
                     </div>
                 </div>
 
