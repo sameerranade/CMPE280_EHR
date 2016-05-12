@@ -6,10 +6,10 @@
 <meta name="author" content="Team Ciphers : Maithili Gole, Nishanth PrabhuSwamy, Sameer Ranade, Sowmya Prakash">
 
 <head>
-  <meta name="description" content="CMPE280Sanjeevani : Chart based EHR data representation">
-  <meta name="keywords" content="CMPE280Sanjeevani, Sanjeevani, EHR data, CMPE 280, CMPE280, SJSU">
-  <meta name="author" content="Team Ciphers : Maithili Gole, Nishanth PrabhuSwamy, Sameer Ranade, Sowmya Prakash">
-    <title>cmpe280sanjeevani</title>
+    <meta name="description" content="CMPE280Sanjeevani : Chart based EHR data representation">
+    <meta name="keywords" content="CMPE280Sanjeevani, Sanjeevani, EHR data, CMPE 280, CMPE280, SJSU">
+    <meta name="author" content="Team Ciphers : Maithili Gole, Nishanth PrabhuSwamy, Sameer Ranade, Sowmya Prakash">
+    <title>Sanjeevani</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/stylesheets/css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -36,7 +36,9 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-    <script type="text/javascript" data-bablic="5733c6f443e0b3bf17b4c1ea" data-bablic-m="['1463011073','en','en',1,['hi'],0,0,0,0,0,0,0,0,[],'cmpe280sanjeevani.com',[],['_v',2]]" src="//cdn2.bablic.com/js/bablic.3.3.js"></script>
+    <script type="text/javascript" data-bablic="5733c6f443e0b3bf17b4c1ea"
+            data-bablic-m="['1463011073','en','en',1,['hi'],0,0,0,0,0,0,0,0,[],'cmpe280sanjeevani.com',[],['_v',2]]"
+            src="//cdn2.bablic.com/js/bablic.3.3.js"></script>
 
     <link rel="stylesheet" href="/stylesheets/css/patient_details.css" type="text/css">
     <script src="/javascripts/controllers/main.js"></script>
@@ -46,20 +48,23 @@
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
 
-    <script type="text/javascript" data-bablic="5733c6f443e0b3bf17b4c1ea" data-bablic-m="['1463011073','en','en',1,['hi'],0,0,0,0,0,0,0,0,[],'cmpe280sanjeevani.com',[],['_v',2]]" src="//cdn2.bablic.com/js/bablic.3.3.js"></script>
+    <script type="text/javascript" data-bablic="5733c6f443e0b3bf17b4c1ea"
+            data-bablic-m="['1463011073','en','en',1,['hi'],0,0,0,0,0,0,0,0,[],'cmpe280sanjeevani.com',[],['_v',2]]"
+            src="//cdn2.bablic.com/js/bablic.3.3.js"></script>
 </head>
 <body ng-controller="PatientDetail" class="index" data-spy="scroll" data-target=".navbar-fixed-top">
 
 <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center"
      style="font-family:Titillium Web,Helvetica Neue,sans-serif;">
     <div id="name" style="float: left;">
-        <i class="fa fa-heartbeat" style="font-size:50px;color:Red; padding: 2px;"></i>
-        <h1 style="color: white; margin-left: 15px;">CMPE 280 Sanjeevani</h1>
-
+        <a href="/">
+            <i class="fa fa-heartbeat" style="font-size:50px;color:Red; padding: 2px;"></i>
+            <h1 style="color: white; margin-left: 15px;">Sanjeevani</h1>
+        </a>
     </div>
     <div style="color: white; float: right; margin: 40px;">
         <a href="/" style="color: #ffffff; float: right;"><i class="glyphicon glyphicon-log-out"
-                                                             style="color: #ffffff; float: right;"></i>Logout</a>        </div>
+                                                             style="color: #ffffff; float: right;"></i>Logout</a></div>
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -139,10 +144,10 @@
 
     <div id="main">
 
-            <!-- angular templating -->
-            <!-- this is where content will be injected -->
-            <div class="container dynamicTile" style="padding-left: 300px;">
-                <div class="col-md-6" style="margin-left: 220px;">
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <div class="container dynamicTile" style="padding-left: 300px;">
+            <div class="col-md-6" style="margin-left: 220px;">
                 <div class="row">
                     <div class="col-sm-3 col-xs-3 col-md-3">
                         <div id="tile1" class="tile">
@@ -212,22 +217,22 @@
                         </div>
                     </div>
                 </div>
-                </div>
-            </div>
-            <div class="row">
-                <div id="container" style="min-width: 813px; height: 400px; margin-left: 300px;"></div>
-            </div>
-            <div class="row">
-                <div id="container2" style="min-width: 813px; height: 400px; margin-left: 300px;"></div>
-            </div>
-            <div class="row">
-                <div id="container3" style="min-width: 813px; height: 400px; margin-left: 300px; display: none"></div>
             </div>
             <div class="row">
               <div id="container4" style="min-width: 813px; height: 400px; margin-left: 300px;"></div>
             </div>
         </div>
+        <div class="row">
+            <div id="container" style="min-width: 813px; height: 400px; margin-left: 300px;"></div>
+        </div>
+        <div class="row">
+            <div id="container2" style="min-width: 813px; height: 400px; margin-left: 300px;"></div>
+        </div>
+        <div class="row">
+            <div id="container3" style="min-width: 813px; height: 400px; margin-left: 300px; display: none"></div>
+        </div>
     </div>
+</div>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/highcharts-3d.js"></script>
@@ -453,14 +458,14 @@ $(function () {
         document.getElementById('container').style.display = 'block';
     }
 
-    function displayBWeightChart(){
+    function displayBWeightChart() {
         document.getElementById('container').style.display = 'none';
         document.getElementById('container3').style.display = 'none';
         document.getElementById('container2').style.display = 'block';
         document.getElementById('container').style.display = 'none';
     }
 
-    function  displayAllergyChart(){
+    function displayAllergyChart() {
         document.getElementById('container').style.display = 'none';
         document.getElementById('container2').style.display = 'none';
         document.getElementById('container4').style.display = 'none';
