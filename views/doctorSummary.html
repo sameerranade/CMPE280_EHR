@@ -6,10 +6,10 @@
 <meta name="author" content="Team Ciphers : Maithili Gole, Nishanth PrabhuSwamy, Sameer Ranade, Sowmya Prakash">
 
 <head>
-  <meta name="description" content="CMPE280Sanjeevani : Chart based EHR data representation">
-  <meta name="keywords" content="CMPE280Sanjeevani, Sanjeevani, EHR data, CMPE 280, CMPE280, SJSU">
-  <meta name="author" content="Team Ciphers : Maithili Gole, Nishanth PrabhuSwamy, Sameer Ranade, Sowmya Prakash">
-    <title>cmpe280sanjeevani</title>
+    <meta name="description" content="CMPE280Sanjeevani : Chart based EHR data representation">
+    <meta name="keywords" content="CMPE280Sanjeevani, Sanjeevani, EHR data, CMPE 280, CMPE280, SJSU">
+    <meta name="author" content="Team Ciphers : Maithili Gole, Nishanth PrabhuSwamy, Sameer Ranade, Sowmya Prakash">
+    <title>Sanjeevani</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/stylesheets/css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -36,7 +36,9 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-    <script type="text/javascript" data-bablic="5733c6f443e0b3bf17b4c1ea" data-bablic-m="['1463011073','en','en',1,['hi'],0,0,0,0,0,0,0,0,[],'cmpe280sanjeevani.com',[],['_v',2]]" src="//cdn2.bablic.com/js/bablic.3.3.js"></script>
+    <script type="text/javascript" data-bablic="5733c6f443e0b3bf17b4c1ea"
+            data-bablic-m="['1463011073','en','en',1,['hi'],0,0,0,0,0,0,0,0,[],'cmpe280sanjeevani.com',[],['_v',2]]"
+            src="//cdn2.bablic.com/js/bablic.3.3.js"></script>
 
 
     <link rel="stylesheet" href="/stylesheets/css/patient_details.css" type="text/css">
@@ -44,7 +46,9 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script type="text/javascript" data-bablic="5733c6f443e0b3bf17b4c1ea" data-bablic-m="['1463011073','en','en',1,['hi'],0,0,0,0,0,0,0,0,[],'cmpe280sanjeevani.com',[],['_v',2]]" src="//cdn2.bablic.com/js/bablic.3.3.js"></script>
+    <script type="text/javascript" data-bablic="5733c6f443e0b3bf17b4c1ea"
+            data-bablic-m="['1463011073','en','en',1,['hi'],0,0,0,0,0,0,0,0,[],'cmpe280sanjeevani.com',[],['_v',2]]"
+            src="//cdn2.bablic.com/js/bablic.3.3.js"></script>
 
     <!-- Latest compiled and minified CSS -->
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
@@ -61,53 +65,92 @@
             stroke: steelblue;
             stroke-width: 1.5px;
         }
+
         .node {
             font: 10px sans-serif;
         }
 
-        .offset{
+        .offset {
             position: relative !important;
             padding-top: 40px !important;
         }
+
         .link {
             fill: none;
             stroke: #ccc;
             stroke-width: 1.5px;
         }
-        h1{
+
+        h1 {
             text-align: center;
             color: #005A98;
         }
-        h4{
+
+        h4 {
             position: relative;
             color: #005A98;
             padding-left: 200px;
         }
-        .row{
+
+        .row {
             min-width: 310px;
             max-width: 800px;
             margin: 0 auto;
         }
+
         .vaccination_chart {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             padding-top: 40px;
             position: relative;
         }
-        img{
+
+        img {
             height: 100px !important;
             width: 150px !important;
         }
 
-        .bullet { font: 10px sans-serif; }
-        .bullet .marker { stroke: #000; stroke-width: 2px; }
-        .bullet .tick line { stroke: #666; stroke-width: .5px; }
-        .bullet .range.s0 { fill: #eee; }
-        .bullet .range.s1 { fill: #ddd; }
-        .bullet .range.s2 { fill: #ccc; }
-        .bullet .measure.s0 { fill: lightsteelblue; }
-        .bullet .measure.s1 { fill: steelblue; }
-        .bullet .title { font-size: 14px; font-weight: bold; }
-        .bullet .subtitle { fill: #999; }
+        .bullet {
+            font: 10px sans-serif;
+        }
+
+        .bullet .marker {
+            stroke: #000;
+            stroke-width: 2px;
+        }
+
+        .bullet .tick line {
+            stroke: #666;
+            stroke-width: .5px;
+        }
+
+        .bullet .range.s0 {
+            fill: #eee;
+        }
+
+        .bullet .range.s1 {
+            fill: #ddd;
+        }
+
+        .bullet .range.s2 {
+            fill: #ccc;
+        }
+
+        .bullet .measure.s0 {
+            fill: lightsteelblue;
+        }
+
+        .bullet .measure.s1 {
+            fill: steelblue;
+        }
+
+        .bullet .title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .bullet .subtitle {
+            fill: #999;
+        }
 
     </style>
 
@@ -163,7 +206,7 @@
 
                     tooltip: {
                         formatter: function () {
-                            return '<b>' + this.series.name + ', age ' + this.point.category ;
+                            return '<b>' + this.series.name + ', age ' + this.point.category;
                         }
                     },
 
@@ -182,7 +225,7 @@
         });
     </script>
     <script type="text/javascript">
-        window.onload=function(){
+        window.onload = function () {
             var radius = 600 / 2;
 
             var cluster = d3.layout.cluster()
@@ -321,7 +364,9 @@
                         })
 
                 node.append("circle")
-                        .attr("r", 4.5).style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; }).on("click", click);
+                        .attr("r", 4.5).style("fill", function (d) {
+                    return d._children ? "lightsteelblue" : "#fff";
+                }).on("click", click);
 
                 node.append("text")
                         .attr("dy", ".31em")
@@ -335,6 +380,7 @@
                             return d.name;
                         });
             }
+
             update(data);
 
             function collapse(d) {
@@ -363,247 +409,251 @@
     </script>
 
     <script>
-    (function() {
+        (function () {
 
 // Chart design based on the recommendations of Stephen Few. Implementation
 // based on the work of Clint Ivy, Jamie Love, and Jason Davies.
 // http://projects.instantcognition.com/protovis/bulletchart/
-        d3.bullet = function() {
-            var orient = "left", // TODO top & bottom
-                    reverse = false,
-                    duration = 0,
-                    ranges = bulletRanges,
-                    markers = bulletMarkers,
-                    measures = bulletMeasures,
-                    width = 380,
-                    height = 30,
-                    tickFormat = null;
+            d3.bullet = function () {
+                var orient = "left", // TODO top & bottom
+                        reverse = false,
+                        duration = 0,
+                        ranges = bulletRanges,
+                        markers = bulletMarkers,
+                        measures = bulletMeasures,
+                        width = 380,
+                        height = 30,
+                        tickFormat = null;
 
-            // For each small multiple…
-            function bullet(g) {
-                g.each(function(d, i) {
-                    var rangez = ranges.call(this, d, i).slice().sort(d3.descending),
-                            markerz = markers.call(this, d, i).slice().sort(d3.descending),
-                            measurez = measures.call(this, d, i).slice().sort(d3.descending),
-                            g = d3.select(this);
+                // For each small multiple…
+                function bullet(g) {
+                    g.each(function (d, i) {
+                        var rangez = ranges.call(this, d, i).slice().sort(d3.descending),
+                                markerz = markers.call(this, d, i).slice().sort(d3.descending),
+                                measurez = measures.call(this, d, i).slice().sort(d3.descending),
+                                g = d3.select(this);
 
-                    // Compute the new x-scale.
-                    var x1 = d3.scale.linear()
-                            .domain([0, Math.max(rangez[0], markerz[0], measurez[0])])
-                            .range(reverse ? [width, 0] : [0, width]);
+                        // Compute the new x-scale.
+                        var x1 = d3.scale.linear()
+                                .domain([0, Math.max(rangez[0], markerz[0], measurez[0])])
+                                .range(reverse ? [width, 0] : [0, width]);
 
-                    // Retrieve the old x-scale, if this is an update.
-                    var x0 = this.__chart__ || d3.scale.linear()
-                                    .domain([0, Infinity])
-                                    .range(x1.range());
+                        // Retrieve the old x-scale, if this is an update.
+                        var x0 = this.__chart__ || d3.scale.linear()
+                                        .domain([0, Infinity])
+                                        .range(x1.range());
 
-                    // Stash the new scale.
-                    this.__chart__ = x1;
+                        // Stash the new scale.
+                        this.__chart__ = x1;
 
-                    // Derive width-scales from the x-scales.
-                    var w0 = bulletWidth(x0),
-                            w1 = bulletWidth(x1);
+                        // Derive width-scales from the x-scales.
+                        var w0 = bulletWidth(x0),
+                                w1 = bulletWidth(x1);
 
-                    // Update the range rects.
-                    var range = g.selectAll("rect.range")
-                            .data(rangez);
+                        // Update the range rects.
+                        var range = g.selectAll("rect.range")
+                                .data(rangez);
 
-                    range.enter().append("rect")
-                            .attr("class", function(d, i) { return "range s" + i; })
-                            .attr("width", w0)
-                            .attr("height", height)
-                            .attr("x", reverse ? x0 : 0)
-                            .transition()
-                            .duration(duration)
-                            .attr("width", w1)
-                            .attr("x", reverse ? x1 : 0);
+                        range.enter().append("rect")
+                                .attr("class", function (d, i) {
+                                    return "range s" + i;
+                                })
+                                .attr("width", w0)
+                                .attr("height", height)
+                                .attr("x", reverse ? x0 : 0)
+                                .transition()
+                                .duration(duration)
+                                .attr("width", w1)
+                                .attr("x", reverse ? x1 : 0);
 
-                    range.transition()
-                            .duration(duration)
-                            .attr("x", reverse ? x1 : 0)
-                            .attr("width", w1)
-                            .attr("height", height);
+                        range.transition()
+                                .duration(duration)
+                                .attr("x", reverse ? x1 : 0)
+                                .attr("width", w1)
+                                .attr("height", height);
 
-                    // Update the measure rects.
-                    var measure = g.selectAll("rect.measure")
-                            .data(measurez);
+                        // Update the measure rects.
+                        var measure = g.selectAll("rect.measure")
+                                .data(measurez);
 
-                    measure.enter().append("rect")
-                            .attr("class", function(d, i) { return "measure s" + i; })
-                            .attr("width", w0)
-                            .attr("height", height / 3)
-                            .attr("x", reverse ? x0 : 0)
-                            .attr("y", height / 3)
-                            .transition()
-                            .duration(duration)
-                            .attr("width", w1)
-                            .attr("x", reverse ? x1 : 0);
+                        measure.enter().append("rect")
+                                .attr("class", function (d, i) {
+                                    return "measure s" + i;
+                                })
+                                .attr("width", w0)
+                                .attr("height", height / 3)
+                                .attr("x", reverse ? x0 : 0)
+                                .attr("y", height / 3)
+                                .transition()
+                                .duration(duration)
+                                .attr("width", w1)
+                                .attr("x", reverse ? x1 : 0);
 
-                    measure.transition()
-                            .duration(duration)
-                            .attr("width", w1)
-                            .attr("height", height / 3)
-                            .attr("x", reverse ? x1 : 0)
-                            .attr("y", height / 3);
+                        measure.transition()
+                                .duration(duration)
+                                .attr("width", w1)
+                                .attr("height", height / 3)
+                                .attr("x", reverse ? x1 : 0)
+                                .attr("y", height / 3);
 
-                    // Update the marker lines.
-                    var marker = g.selectAll("line.marker")
-                            .data(markerz);
+                        // Update the marker lines.
+                        var marker = g.selectAll("line.marker")
+                                .data(markerz);
 
-                    marker.enter().append("line")
-                            .attr("class", "marker")
-                            .attr("x1", x0)
-                            .attr("x2", x0)
-                            .attr("y1", height / 6)
-                            .attr("y2", height * 5 / 6)
-                            .transition()
-                            .duration(duration)
-                            .attr("x1", x1)
-                            .attr("x2", x1);
+                        marker.enter().append("line")
+                                .attr("class", "marker")
+                                .attr("x1", x0)
+                                .attr("x2", x0)
+                                .attr("y1", height / 6)
+                                .attr("y2", height * 5 / 6)
+                                .transition()
+                                .duration(duration)
+                                .attr("x1", x1)
+                                .attr("x2", x1);
 
-                    marker.transition()
-                            .duration(duration)
-                            .attr("x1", x1)
-                            .attr("x2", x1)
-                            .attr("y1", height / 6)
-                            .attr("y2", height * 5 / 6);
+                        marker.transition()
+                                .duration(duration)
+                                .attr("x1", x1)
+                                .attr("x2", x1)
+                                .attr("y1", height / 6)
+                                .attr("y2", height * 5 / 6);
 
-                    // Compute the tick format.
-                    var format = tickFormat || x1.tickFormat(8);
+                        // Compute the tick format.
+                        var format = tickFormat || x1.tickFormat(8);
 
-                    // Update the tick groups.
-                    var tick = g.selectAll("g.tick")
-                            .data(x1.ticks(8), function(d) {
-                                return this.textContent || format(d);
-                            });
+                        // Update the tick groups.
+                        var tick = g.selectAll("g.tick")
+                                .data(x1.ticks(8), function (d) {
+                                    return this.textContent || format(d);
+                                });
 
-                    // Initialize the ticks with the old scale, x0.
-                    var tickEnter = tick.enter().append("g")
-                            .attr("class", "tick")
-                            .attr("transform", bulletTranslate(x0))
-                            .style("opacity", 1e-6);
+                        // Initialize the ticks with the old scale, x0.
+                        var tickEnter = tick.enter().append("g")
+                                .attr("class", "tick")
+                                .attr("transform", bulletTranslate(x0))
+                                .style("opacity", 1e-6);
 
-                    tickEnter.append("line")
-                            .attr("y1", height)
-                            .attr("y2", height * 7 / 6);
+                        tickEnter.append("line")
+                                .attr("y1", height)
+                                .attr("y2", height * 7 / 6);
 
-                    tickEnter.append("text")
-                            .attr("text-anchor", "middle")
-                            .attr("dy", "1em")
-                            .attr("y", height * 7 / 6)
-                            .text(format);
+                        tickEnter.append("text")
+                                .attr("text-anchor", "middle")
+                                .attr("dy", "1em")
+                                .attr("y", height * 7 / 6)
+                                .text(format);
 
-                    // Transition the entering ticks to the new scale, x1.
-                    tickEnter.transition()
-                            .duration(duration)
-                            .attr("transform", bulletTranslate(x1))
-                            .style("opacity", 1);
+                        // Transition the entering ticks to the new scale, x1.
+                        tickEnter.transition()
+                                .duration(duration)
+                                .attr("transform", bulletTranslate(x1))
+                                .style("opacity", 1);
 
-                    // Transition the updating ticks to the new scale, x1.
-                    var tickUpdate = tick.transition()
-                            .duration(duration)
-                            .attr("transform", bulletTranslate(x1))
-                            .style("opacity", 1);
+                        // Transition the updating ticks to the new scale, x1.
+                        var tickUpdate = tick.transition()
+                                .duration(duration)
+                                .attr("transform", bulletTranslate(x1))
+                                .style("opacity", 1);
 
-                    tickUpdate.select("line")
-                            .attr("y1", height)
-                            .attr("y2", height * 7 / 6);
+                        tickUpdate.select("line")
+                                .attr("y1", height)
+                                .attr("y2", height * 7 / 6);
 
-                    tickUpdate.select("text")
-                            .attr("y", height * 7 / 6);
+                        tickUpdate.select("text")
+                                .attr("y", height * 7 / 6);
 
-                    // Transition the exiting ticks to the new scale, x1.
-                    tick.exit().transition()
-                            .duration(duration)
-                            .attr("transform", bulletTranslate(x1))
-                            .style("opacity", 1e-6)
-                            .remove();
-                });
-                d3.timer.flush();
+                        // Transition the exiting ticks to the new scale, x1.
+                        tick.exit().transition()
+                                .duration(duration)
+                                .attr("transform", bulletTranslate(x1))
+                                .style("opacity", 1e-6)
+                                .remove();
+                    });
+                    d3.timer.flush();
+                }
+
+                // left, right, top, bottom
+                bullet.orient = function (x) {
+                    if (!arguments.length) return orient;
+                    orient = x;
+                    reverse = orient == "right" || orient == "bottom";
+                    return bullet;
+                };
+
+                // ranges (bad, satisfactory, good)
+                bullet.ranges = function (x) {
+                    if (!arguments.length) return ranges;
+                    ranges = x;
+                    return bullet;
+                };
+
+                // markers (previous, goal)
+                bullet.markers = function (x) {
+                    if (!arguments.length) return markers;
+                    markers = x;
+                    return bullet;
+                };
+
+                // measures (actual, forecast)
+                bullet.measures = function (x) {
+                    if (!arguments.length) return measures;
+                    measures = x;
+                    return bullet;
+                };
+
+                bullet.width = function (x) {
+                    if (!arguments.length) return width;
+                    width = x;
+                    return bullet;
+                };
+
+                bullet.height = function (x) {
+                    if (!arguments.length) return height;
+                    height = x;
+                    return bullet;
+                };
+
+                bullet.tickFormat = function (x) {
+                    if (!arguments.length) return tickFormat;
+                    tickFormat = x;
+                    return bullet;
+                };
+
+                bullet.duration = function (x) {
+                    if (!arguments.length) return duration;
+                    duration = x;
+                    return bullet;
+                };
+
+                return bullet;
+            };
+
+            function bulletRanges(d) {
+                return d.ranges;
             }
 
-            // left, right, top, bottom
-            bullet.orient = function(x) {
-                if (!arguments.length) return orient;
-                orient = x;
-                reverse = orient == "right" || orient == "bottom";
-                return bullet;
-            };
+            function bulletMarkers(d) {
+                return d.markers;
+            }
 
-            // ranges (bad, satisfactory, good)
-            bullet.ranges = function(x) {
-                if (!arguments.length) return ranges;
-                ranges = x;
-                return bullet;
-            };
+            function bulletMeasures(d) {
+                return d.measures;
+            }
 
-            // markers (previous, goal)
-            bullet.markers = function(x) {
-                if (!arguments.length) return markers;
-                markers = x;
-                return bullet;
-            };
+            function bulletTranslate(x) {
+                return function (d) {
+                    return "translate(" + x(d) + ",0)";
+                };
+            }
 
-            // measures (actual, forecast)
-            bullet.measures = function(x) {
-                if (!arguments.length) return measures;
-                measures = x;
-                return bullet;
-            };
+            function bulletWidth(x) {
+                var x0 = x(0);
+                return function (d) {
+                    return Math.abs(x(d) - x0);
+                };
+            }
 
-            bullet.width = function(x) {
-                if (!arguments.length) return width;
-                width = x;
-                return bullet;
-            };
-
-            bullet.height = function(x) {
-                if (!arguments.length) return height;
-                height = x;
-                return bullet;
-            };
-
-            bullet.tickFormat = function(x) {
-                if (!arguments.length) return tickFormat;
-                tickFormat = x;
-                return bullet;
-            };
-
-            bullet.duration = function(x) {
-                if (!arguments.length) return duration;
-                duration = x;
-                return bullet;
-            };
-
-            return bullet;
-        };
-
-        function bulletRanges(d) {
-            return d.ranges;
-        }
-
-        function bulletMarkers(d) {
-            return d.markers;
-        }
-
-        function bulletMeasures(d) {
-            return d.measures;
-        }
-
-        function bulletTranslate(x) {
-            return function(d) {
-                return "translate(" + x(d) + ",0)";
-            };
-        }
-
-        function bulletWidth(x) {
-            var x0 = x(0);
-            return function(d) {
-                return Math.abs(x(d) - x0);
-            };
-        }
-
-    })();
+        })();
     </script>
 
 </head>
@@ -613,252 +663,256 @@
       data-target=".navbar-fixed-top">
 <!--<div id="loading"></div>-->
 
-    <!-- Navigation -->
+<!-- Navigation -->
 
-    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center"
-         style="font-family:Titillium Web,Helvetica Neue,sans-serif;">
-        <div id="name" style="float: left;">
+<nav class="navbar navbar-default navbar-fixed-top navbar-shrink text-center"
+     style="font-family:Titillium Web,Helvetica Neue,sans-serif;">
+    <div id="name" style="float: left;">
+        <a href="/">
             <i class="fa fa-heartbeat" style="font-size:50px;color:Red; padding: 2px;"></i>
-            <h1 style="color: white; margin-left: 15px;">CMPE 280 Sanjeevani</h1>
-
+            <h1 style="color: white; margin-left: 15px;">Sanjeevani</h1>
+        </a>
+    </div>
+    <div style="color: white; float: right; margin: 40px;">
+        <a href="/" style="color: #ffffff; float: right;"><i class="glyphicon glyphicon-log-out"
+                                                             style="color: #ffffff; float: right;"></i>Logout</a></div>
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--<a class="navbar-brand" href="#page-top">Clinix</a>-->
         </div>
-        <div style="color: white; float: right; margin: 40px;">
-            <a href="/" style="color: #ffffff; float: right;"><i class="glyphicon glyphicon-log-out"
-                                                                 style="color: #ffffff; float: right;"></i>Logout</a>        </div>
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!--<a class="navbar-brand" href="#page-top">Clinix</a>-->
-            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <!--<ul class="nav navbar-nav">-->
-                <!--<li class="page-scroll">-->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!--<ul class="nav navbar-nav">-->
+            <!--<li class="page-scroll">-->
 
 
-                <!--</li>-->
+            <!--</li>-->
 
-                <!--</ul>-->
-            </div>
-            <!-- /.navbar-collapse -->
+            <!--</ul>-->
         </div>
-        <!-- /.container-fluid -->
-    </nav>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
 <br><br>
 
-    <div class="col-md-4 col-xs-12">
-        <div class="nav-side-menu">
-            <div class="brand"><a style="border-top: #ffffff;">Doctor Summary</a></div>
-            <!--<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>-->
+<div class="col-md-4 col-xs-12">
+    <div class="nav-side-menu">
+        <div class="brand"><a style="border-top: #ffffff;">Doctor Summary</a></div>
+        <!--<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>-->
 
-            <div class="menu-list">
+        <div class="menu-list">
 
-                <ul id="menu-content" class="menu-content collapse out">
+            <ul id="menu-content" class="menu-content collapse out">
 
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-user fa-lg"></i> Name: Dr. Jason Bourne
-                        </a>
-                    </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-lg"></i> Name: Dr. Jason Bourne
+                    </a>
+                </li>
 
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-user fa-lg"></i> Age: 48
-                        </a>
-                    </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-lg"></i> Age: 48
+                    </a>
+                </li>
 
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-user fa-lg"></i> Specialization: Cardiology
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-users fa-lg"></i> Phone: 669-888-6221
-                        </a>
-                    </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-lg"></i> Specialization: Cardiology
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-users fa-lg"></i> Phone: 669-888-6221
+                    </a>
+                </li>
 
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-user fa-lg"></i> Address: Washington Square, San Jose
-                        </a>
-                    </li>
-                </ul>
-            </div><br/><br/>
-            <button type="button" class="btn btn-secondary"><a href="/plist">Return to Patients list</a></button>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-lg"></i> Address: Washington Square, San Jose
+                    </a>
+                </li>
+            </ul>
         </div>
+        <br/><br/>
+        <button type="button" class="btn btn-secondary"><a href="/plist">Return to Patients list</a></button>
     </div>
-        <br><br><br><br>
+</div>
+<br><br><br><br>
 
-    <div class="container">
+<div class="container">
 
-        <div id="main">
+    <div id="main">
 
-                <!-- angular templating -->
-                <!-- this is where content will be injected -->
-                <div class="container dynamicTile" style="padding-left: 300px;">
-                    <div class="col-md-12">
-                    <div class="row ">
-                        <div class="col-sm-4 col-xs-4 col-md-4">
-                            <div id="tile1" class="tile" >
-                                <div class="carousel slide" data-ride="carousel">
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <img src="/images/critical.png" id="show_criticality"
-                                                 alt="Criticality chart" class="img-responsive"/>
-                                            <h6 style="text-align: justify;">
-                                                Criticality Chart
-                                            </h6>
-                                        </div>
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <div class="container dynamicTile" style="padding-left: 300px;">
+            <div class="col-md-12">
+                <div class="row ">
+                    <div class="col-sm-4 col-xs-4 col-md-4">
+                        <div id="tile1" class="tile">
+                            <div class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="/images/critical.png" id="show_criticality"
+                                             alt="Criticality chart" class="img-responsive"/>
+                                        <h6 style="text-align: justify;">
+                                            Criticality Chart
+                                        </h6>
                                     </div>
                                 </div>
-
                             </div>
-                        </div>
 
-                        <div class="col-sm-4 col-xs-4 col-md-4">
-                            <div id="tile2" class="tile">
-                                <div class="carousel slide" data-ride="carousel">
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <img src="/images/age.png" id="show_age" alt="Age Chart"
-                                                 class="img-responsive"/>
-                                            <h6 style="text-align: justify;">
-                                                Age Demography Chart
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-xs-4 col-md-4">
-                            <div id="tile3" class="tile">
-                                <div class="carousel slide" data-ride="carousel">
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <img src="/images/disease.png" id="show_cluster" alt="Disease chart"
-                                                 class="img-responsive"/>
-                                            <h6 style="text-align: justify;">
-                                                Diseases Chart
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
                         </div>
                     </div>
-                </div>
-                <div class="row" style="padding-left: 200px;">
-                    <div class="age_chart">
-                        <div id="container"></div>
+
+                    <div class="col-sm-4 col-xs-4 col-md-4">
+                        <div id="tile2" class="tile">
+                            <div class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="/images/age.png" id="show_age" alt="Age Chart"
+                                             class="img-responsive"/>
+                                        <h6 style="text-align: justify;">
+                                            Age Demography Chart
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-                <div class="row" style="padding-left: 200px;">
-                    <div class="cluster_chart" id="cluster_chart"></div>
-                </div>
-                <div class="row" style="padding-left: 200px;">
-                    <div class="vaccination_chart" id="vaccination_chart"></div>
+                    <div class="col-sm-4 col-xs-4 col-md-4">
+                        <div id="tile3" class="tile">
+                            <div class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="/images/disease.png" id="show_cluster" alt="Disease chart"
+                                             class="img-responsive"/>
+                                        <h6 style="text-align: justify;">
+                                            Diseases Chart
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="row" style="padding-left: 200px;">
+            <div class="age_chart">
+                <div id="container"></div>
+            </div>
+        </div>
+        <div class="row" style="padding-left: 200px;">
+            <div class="cluster_chart" id="cluster_chart"></div>
+        </div>
+        <div class="row" style="padding-left: 200px;">
+            <div class="vaccination_chart" id="vaccination_chart"></div>
+        </div>
     </div>
+</div>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script>
-        var margin = {top: 5, right: 40, bottom: 20, left: 120},
-                width = 650 - margin.left - margin.right,
-                height = 50 - margin.top - margin.bottom;
+    var margin = {top: 5, right: 40, bottom: 20, left: 120},
+            width = 650 - margin.left - margin.right,
+            height = 50 - margin.top - margin.bottom;
 
-        var chart = d3.bullet()
-                .width(width)
-                .height(height);
+    var chart = d3.bullet()
+            .width(width)
+            .height(height);
 
-        d3.json("/d3/bullet.json", function(error, data) {
-            if (error) throw error;
+    d3.json("/d3/bullet.json", function (error, data) {
+        if (error) throw error;
 
-            var svg = d3.select("#vaccination_chart").selectAll("svg")
-                    .data(data)
-                    .enter().append("svg")
-                    .attr("class", "bullet")
-                    .attr("width", width + margin.left + margin.right)
-                    .attr("height", height + margin.top + margin.bottom)
-                    .append("g")
-                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-                    .call(chart);
+        var svg = d3.select("#vaccination_chart").selectAll("svg")
+                .data(data)
+                .enter().append("svg")
+                .attr("class", "bullet")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+                .call(chart);
 
-            var title = svg.append("g")
-                    .style("text-anchor", "end")
-                    .attr("transform", "translate(-6," + height / 2 + ")");
+        var title = svg.append("g")
+                .style("text-anchor", "end")
+                .attr("transform", "translate(-6," + height / 2 + ")");
 
-            title.append("text")
-                    .attr("class", "title")
-                    .text(function(d) { return d.title; });
+        title.append("text")
+                .attr("class", "title")
+                .text(function (d) {
+                    return d.title;
+                });
 
-            title.append("text")
-                    .attr("class", "subtitle")
-                    .attr("dy", "1em")
-                    .text(function(d) { return d.subtitle; });
+        title.append("text")
+                .attr("class", "subtitle")
+                .attr("dy", "1em")
+                .text(function (d) {
+                    return d.subtitle;
+                });
 
-        });
+    });
 
-        function randomize(d) {
-            if (!d.randomizer) d.randomizer = randomizer(d);
-            d.ranges = d.ranges.map(d.randomizer);
-            d.markers = d.markers.map(d.randomizer);
-            d.measures = d.measures.map(d.randomizer);
-            return d;
-        }
+    function randomize(d) {
+        if (!d.randomizer) d.randomizer = randomizer(d);
+        d.ranges = d.ranges.map(d.randomizer);
+        d.markers = d.markers.map(d.randomizer);
+        d.measures = d.measures.map(d.randomizer);
+        return d;
+    }
 
-        function randomizer(d) {
-            var k = d3.max(d.ranges) * .2;
-            return function(d) {
-                return Math.max(0, d + k * (Math.random() - .5));
-            };
-        }
-    </script>
+    function randomizer(d) {
+        var k = d3.max(d.ranges) * .2;
+        return function (d) {
+            return Math.max(0, d + k * (Math.random() - .5));
+        };
+    }
+</script>
 
-    <script>
-        $(document).ready(function(){
-            $(".age_chart").hide();
+<script>
+    $(document).ready(function () {
+        $(".age_chart").hide();
+        $(".cluster_chart").hide();
+        $(".vaccination_chart").show();
+
+        $("#show_age").click(function () {
             $(".cluster_chart").hide();
-            $(".vaccination_chart").show();
-
-            $("#show_age").click(function(){
-                $(".cluster_chart").hide();
-                $(".vaccination_chart").hide();
-                $(".age_chart").show();
-            });
-            $("#show_cluster").click(function(){
-                $(".cluster_chart").show();
-                $(".vaccination_chart").hide();
-                $(".age_chart").hide();
-            });
-            $("#show_criticality").click(function(){
-                $(".cluster_chart").hide();
-                $(".age_chart").hide();
-                $(".vaccination_chart").show();
-            });
+            $(".vaccination_chart").hide();
+            $(".age_chart").show();
         });
-    </script>
+        $("#show_cluster").click(function () {
+            $(".cluster_chart").show();
+            $(".vaccination_chart").hide();
+            $(".age_chart").hide();
+        });
+        $("#show_criticality").click(function () {
+            $(".cluster_chart").hide();
+            $(".age_chart").hide();
+            $(".vaccination_chart").show();
+        });
+    });
+</script>
 
 
 </body>
-
-
 
 
 </html>
