@@ -4,7 +4,7 @@
 
 ehrApp.controller('patientController', function ($scope, $http) {
 
-    $http.get('http://localhost:3000/patients').success(function (res) {
+    $http.get('http://104.131.132.177/patients').success(function (res) {
 
         $scope.currentPage = 0;
         $scope.pageSize = 3;
@@ -23,7 +23,7 @@ ehrApp.controller('patientController', function ($scope, $http) {
 
     $scope.getPatientDetails = function (pName) {
         console.log(pName);
-        var url = 'http://localhost:3000/patients/' + pName + '/';
+        var url = 'http://104.131.132.177/patients/' + pName + '/';
         $http.get(url).success(function (res) {
             console.log(res);
 
@@ -53,7 +53,7 @@ ehrApp.controller('patientController', function ($scope, $http) {
 
     $scope.getAppointments = function (pName) {
         $scope.applist = [];
-        var url = 'http://localhost:3000/appointments/';
+        var url = 'http://104.131.132.177/appointments/';
         $http.get(url).success(function (res) {
             console.log(res);
             $scope.applist = res;
