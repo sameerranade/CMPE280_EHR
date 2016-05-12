@@ -30,6 +30,10 @@ router.get('/signup', function (req, res, next) {
     res.render('signup');
 });
 
+router.get('/livedata', function (req, res, next) {
+    res.render('livedata');
+});
+
 router.post('/signup',function(req,res){
 
     console.log("Inside post app.js");

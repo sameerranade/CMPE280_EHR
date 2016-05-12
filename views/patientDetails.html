@@ -144,7 +144,7 @@
             <div class="container dynamicTile" style="padding-left: 300px;">
                 <div class="col-md-6" style="margin-left: 220px;">
                 <div class="row">
-                    <div class="col-sm-4 col-xs-4 col-md-4">
+                    <div class="col-sm-3 col-xs-3 col-md-3">
                         <div id="tile1" class="tile">
                             <div class="carousel slide" data-ride="carousel">
                                 <!-- Wrapper for slides -->
@@ -161,7 +161,7 @@
 
                         </div>
                     </div>
-                    <div class="col-sm-4 col-xs-4 col-md-4">
+                    <div class="col-sm-3 col-xs-3 col-md-3">
                         <div id="tile2" class="tile">
                             <div class="carousel slide" data-ride="carousel">
                                 <!-- Wrapper for slides -->
@@ -178,7 +178,7 @@
 
                         </div>
                     </div>
-                    <div class="col-sm-4 col-xs-4 col-md-4">
+                    <div class="col-sm-3 col-xs-3 col-md-3">
                         <div id="tile3" class="tile">
                             <div class="carousel slide" data-ride="carousel">
                                 <!-- Wrapper for slides -->
@@ -195,6 +195,22 @@
 
                         </div>
                     </div>
+                    <div class="col-sm-3 col-xs-3 col-md-3">
+                        <div id="tile4" class="tile">
+                            <div class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="/images/heartrate.png" onclick="displayHeartChart()" alt="Heart Rate"
+                                             class="img-responsive"/>
+                                        <h6 style="text-align: justify;">
+                                            Live Heartrate
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 </div>
             </div>
@@ -207,11 +223,83 @@
             <div class="row">
                 <div id="container3" style="min-width: 813px; height: 400px; margin-left: 300px; display: none"></div>
             </div>
+            <div class="row">
+              <div id="container4" style="min-width: 813px; height: 400px; margin-left: 300px;"></div>
+            </div>
         </div>
     </div>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+
+<script type="text/javascript">
+
+var temp = 1;
+$(function () {
+    $('#container4').highcharts({
+   		 chart: {
+                type: 'spline',
+                animation: Highcharts.svg, // don't animate in old IE
+                marginRight: 10,
+            },
+        title: {
+                text: 'Live heart data for the User: Prabhu'
+            },
+       xAxis: {
+                type: 'datetime',
+                tickPixelInterval: 100
+            },
+         yAxis: {
+                title: {
+                    text: 'Value'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+                        Highcharts.numberFormat(this.y, 2);
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+        series: [{
+            data: [70,72,73,71,68,67,72,76,72]
+        }]
+    });
+
+
+    // the button action
+    var i = 0;
+    setInterval(function(){
+        var chart = $('#container4').highcharts();
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://ec2-54-153-12-179.us-west-1.compute.amazonaws.com:3001/heartrate/getCurrentHeartRate',
+            success: function(data) {
+                data = JSON.parse(data);
+                chart.series[0].addPoint(Number(data.hr), true, true);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                console.log("Ajax Error: "+textStatus);
+            }
+    	});
+
+     }, 2000);
+});
+
+</script>
+
 
 <script>
     $(function () {
@@ -361,6 +449,7 @@
     function displayBPChart() {
         document.getElementById('container2').style.display = 'none';
         document.getElementById('container3').style.display = 'none';
+        document.getElementById('container4').style.display = 'none';
         document.getElementById('container').style.display = 'block';
     }
 
@@ -368,12 +457,20 @@
         document.getElementById('container').style.display = 'none';
         document.getElementById('container3').style.display = 'none';
         document.getElementById('container2').style.display = 'block';
+        document.getElementById('container').style.display = 'none';
     }
 
     function  displayAllergyChart(){
         document.getElementById('container').style.display = 'none';
         document.getElementById('container2').style.display = 'none';
+        document.getElementById('container4').style.display = 'none';
         document.getElementById('container3').style.display = 'block';
+    }
+    function  displayHeartChart(){
+        document.getElementById('container').style.display = 'none';
+        document.getElementById('container2').style.display = 'none';
+        document.getElementById('container4').style.display = 'block';
+        document.getElementById('container3').style.display = 'none';
     }
 </script>
 </body>
