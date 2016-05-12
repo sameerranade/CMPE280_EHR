@@ -125,9 +125,8 @@ router.get('/doctorSummary', function (req, res, next) {
     res.render('doctorSummary');
 });
 
-router.get('/hospitalDashboard', function (req, res, next) {
+router.get('/hospital_dashboard', function (req, res, next) {
     res.render('hospitalDashboard');
 });
 
 module.exports = router;
-
